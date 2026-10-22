@@ -1,0 +1,41 @@
+{
+  "name": "GuestbookEntry",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Display name of the visitor"
+    },
+    "message": {
+      "type": "string",
+      "description": "Comment or song lyric text"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "comment",
+        "lyrics"
+      ],
+      "default": "comment",
+      "description": "Comment on the site or a creative-challenge lyric"
+    }
+  },
+  "required": [
+    "name",
+    "message"
+  ],
+  "rls": {
+    "read": {},
+    "create": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
