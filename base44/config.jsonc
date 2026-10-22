@@ -1,9 +1,0 @@
-{
-  "name": "NEXORA — Beyond the Ordinary",
-  "site": {
-    "installCommand": "npm install",
-    "buildCommand": "npm run build",
-    "serveCommand": "npm run dev",
-    "outputDirectory": "./dist"
-  }
-}
