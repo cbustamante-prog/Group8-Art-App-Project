@@ -1,7 +1,7 @@
-import SectionHead from "@/components/nexora/SectionHead";
-import Guestbook from "@/components/nexora/community/Guestbook";
-import Poll from "@/components/nexora/community/Poll";
-import FeedbackForm from "@/components/nexora/community/FeedbackForm";
+import SectionHead from "@/components/music-exhibition/SectionHead";
+import Guestbook from "@/components/music-exhibition/community/Guestbook";
+import Poll from "@/components/music-exhibition/community/Poll";
+import FeedbackForm from "@/components/music-exhibition/community/FeedbackForm";
 
 export default function Community() {
   return (

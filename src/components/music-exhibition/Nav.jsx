@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import Logo from "@/components/nexora/Logo";
-import { NAV_LINKS, scrollToId } from "@/lib/nexora";
+import Logo from "@/components/music-exhibition/Logo";
+import { NAV_LINKS, scrollToId } from "@/lib/siteNavigation";
 
 export default function Nav() {
   const [active, setActive] = useState("");
@@ -29,7 +29,7 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6">
       <nav aria-label="Main" className={`glass mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 py-2.5 transition-all duration-500 sm:px-6 ${scrolled ? "shadow-[0_10px_50px_-15px_rgba(139,92,246,0.6)]" : ""}`}>
-        <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} aria-label="NEXORA home"><Logo /></a>
+        <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} aria-label="The Art of Music home"><Logo /></a>
         <ul className="hidden items-center gap-0.5 lg:flex">
           {NAV_LINKS.map((l) => (
             <li key={l.id} className="relative">

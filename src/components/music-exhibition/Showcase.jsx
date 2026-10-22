@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Music2 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-import SectionHead from "@/components/nexora/SectionHead";
+import SectionHead from "@/components/music-exhibition/SectionHead";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { WORKS, WORK_CATEGORIES } from "@/lib/musicData";
 
@@ -57,7 +57,7 @@ export default function Showcase() {
               </DialogHeader>
               <p className="text-slate-300">{sel.desc}</p>
               <div><h4 className="font-display font-semibold text-sky-300">Why it matters</h4><p className="mt-1 text-slate-300">{sel.meaning}</p></div>
-              <p className="text-xs text-slate-500">Credit: work by {sel.creator}. Cover art is an original NEXORA design, not official artwork.</p>
+              <p className="text-xs text-slate-500">Credit: work by {sel.creator}. Cover art is an original design, not official artwork.</p>
             </div>
           </>)}
         </DialogContent>

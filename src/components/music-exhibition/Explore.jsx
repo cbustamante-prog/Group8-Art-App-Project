@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sparkles, Waves, PenLine, Disc3, Mic2, ArrowUpRight } from "lucide-react";
-import SectionHead from "@/components/nexora/SectionHead";
-import Reveal from "@/components/nexora/Reveal";
+import SectionHead from "@/components/music-exhibition/SectionHead";
+import Reveal from "@/components/music-exhibition/Reveal";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { EXPLORE } from "@/lib/musicData";
 

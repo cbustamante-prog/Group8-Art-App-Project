@@ -1,5 +1,5 @@
-import SectionHead from "@/components/nexora/SectionHead";
-import Reveal from "@/components/nexora/Reveal";
+import SectionHead from "@/components/music-exhibition/SectionHead";
+import Reveal from "@/components/music-exhibition/Reveal";
 
 const CARDS = [
   ["What we learned", "Music is more than entertainment. Learning the elements — rhythm, pitch, harmony, dynamics and tempo — gave us words for things we had always felt when listening."],

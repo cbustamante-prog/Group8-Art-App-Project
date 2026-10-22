@@ -1,6 +1,6 @@
 import { Quote, Heart, Lightbulb, Globe2 } from "lucide-react";
-import SectionHead from "@/components/nexora/SectionHead";
-import Reveal from "@/components/nexora/Reveal";
+import SectionHead from "@/components/music-exhibition/SectionHead";
+import Reveal from "@/components/music-exhibition/Reveal";
 
 const VALUES = [
   { icon: Heart, t: "Feel first", d: "Music reaches us emotionally before we can explain it. We start from listening." },
@@ -13,7 +13,7 @@ export default function About() {
     <section id="about" className="relative px-5 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
         <SectionHead label="About · Understanding Music" title="Sound is vibration. Music is what we make of it.">
-          NEXORA exists to turn Module 8 — Music — into an experience you can hear, play and question, not just read.
+          This exhibition turns Module 8 — Music — into an experience you can hear, play and question, not just read.
         </SectionHead>
         <div className="grid gap-6 lg:grid-cols-12">
           <Reveal className="glass rounded-3xl p-8 lg:col-span-7">

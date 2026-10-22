@@ -1,10 +1,10 @@
 import { useState } from "react";
-import SectionHead from "@/components/nexora/SectionHead";
-import Reveal from "@/components/nexora/Reveal";
-import Quiz from "@/components/nexora/play/Quiz";
-import Matching from "@/components/nexora/play/Matching";
-import Guess from "@/components/nexora/play/Guess";
-import SoundLab from "@/components/nexora/play/SoundLab";
+import SectionHead from "@/components/music-exhibition/SectionHead";
+import Reveal from "@/components/music-exhibition/Reveal";
+import Quiz from "@/components/music-exhibition/play/Quiz";
+import Matching from "@/components/music-exhibition/play/Matching";
+import Guess from "@/components/music-exhibition/play/Guess";
+import SoundLab from "@/components/music-exhibition/play/SoundLab";
 
 const TABS = [
   { id: "quiz", label: "Quiz", C: Quiz },

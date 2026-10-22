@@ -1,5 +1,5 @@
-import SectionHead from "@/components/nexora/SectionHead";
-import Reveal from "@/components/nexora/Reveal";
+import SectionHead from "@/components/music-exhibition/SectionHead";
+import Reveal from "@/components/music-exhibition/Reveal";
 
 const ARTISTS = [
   { name: "Ludwig van Beethoven", life: "1770 – 1827 · Bonn, Germany", from: "#5f4b0f", to: "#c9a227",

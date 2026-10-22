@@ -123,7 +123,7 @@ export const GLOSSARY = [
 export const GLOSSARY_CATS = ["All", "Tempo", "Dynamics", "Rhythm", "Pitch & Harmony", "Articulation", "Form", "Performance", "Voice"];
 
 export const FAQS = [
-  ["What is The Art of Music?", "The Art of Music is a NEXORA exhibition — a student-made interactive learning site for Art Appreciation, Group 8, covering Music from Module 8."],
+  ["What is The Art of Music?", "The Art of Music is a student-made interactive learning site for Art Appreciation, Group 8, covering Music from Module 8."],
   ["What is music, exactly?", "Fundamentally, music is a combination of sounds, and sound is vibration. Ferruccio Busoni called it \"sonorous air.\""],
   ["Which module lessons does the site cover?", "The origin and role of music (8.1), the elements of music (8.3), essentials of songwriting (8.4), music genres (8.5) and classification of instruments (8.6)."],
   ["How do the interactive activities work?", "Open the Interactive section and choose from the quiz, matching game, guess-the-clue game or the Sound Lab. Objective activities show feedback and correct answers."],

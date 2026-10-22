@@ -1,18 +1,18 @@
-import Nav from "@/components/nexora/Nav";
-import Hero from "@/components/nexora/Hero";
-import About from "@/components/nexora/About";
-import Explore from "@/components/nexora/Explore";
-import Showcase from "@/components/nexora/Showcase";
-import Spotlight from "@/components/nexora/Spotlight";
-import Interactive from "@/components/nexora/Interactive";
-import Insights from "@/components/nexora/Insights";
-import Community from "@/components/nexora/Community";
-import Reflection from "@/components/nexora/Reflection";
-import Faq from "@/components/nexora/Faq";
-import Contact from "@/components/nexora/Contact";
-import Creators from "@/components/nexora/Creators";
-import References from "@/components/nexora/References";
-import Footer from "@/components/nexora/Footer";
+import Nav from "@/components/music-exhibition/Nav";
+import Hero from "@/components/music-exhibition/Hero";
+import About from "@/components/music-exhibition/About";
+import Explore from "@/components/music-exhibition/Explore";
+import Showcase from "@/components/music-exhibition/Showcase";
+import Spotlight from "@/components/music-exhibition/Spotlight";
+import Interactive from "@/components/music-exhibition/Interactive";
+import Insights from "@/components/music-exhibition/Insights";
+import Community from "@/components/music-exhibition/Community";
+import Reflection from "@/components/music-exhibition/Reflection";
+import Faq from "@/components/music-exhibition/Faq";
+import Contact from "@/components/music-exhibition/Contact";
+import Creators from "@/components/music-exhibition/Creators";
+import References from "@/components/music-exhibition/References";
+import Footer from "@/components/music-exhibition/Footer";
 
 export default function Home() {
   return (

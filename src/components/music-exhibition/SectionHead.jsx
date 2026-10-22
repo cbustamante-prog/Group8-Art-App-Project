@@ -1,4 +1,4 @@
-import Reveal from "@/components/nexora/Reveal";
+import Reveal from "@/components/music-exhibition/Reveal";
 
 export default function SectionHead({ label, title, children }) {
   return (

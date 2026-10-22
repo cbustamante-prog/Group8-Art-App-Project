@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import SectionHead from "@/components/nexora/SectionHead";
+import SectionHead from "@/components/music-exhibition/SectionHead";
 import { FAQS } from "@/lib/musicData";
 
 export default function Faq() {

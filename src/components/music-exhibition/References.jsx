@@ -1,4 +1,4 @@
-import SectionHead from "@/components/nexora/SectionHead";
+import SectionHead from "@/components/music-exhibition/SectionHead";
 import { REFERENCES, IMAGE_CREDITS } from "@/lib/musicData";
 
 export default function References() {

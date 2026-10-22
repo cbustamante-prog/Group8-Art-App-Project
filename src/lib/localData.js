@@ -1,8 +1,8 @@
 const KEYS = {
-  guestbook: "nexora_guestbook",
-  poll: "nexora_poll",
-  feedback: "nexora_feedback",
-  contact: "nexora_contact",
+  guestbook: "art_music_guestbook",
+  poll: "art_music_poll",
+  feedback: "art_music_feedback",
+  contact: "art_music_contact",
 };
 
 function readList(key) {

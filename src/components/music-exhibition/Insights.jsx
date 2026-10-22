@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Search, SearchX } from "lucide-react";
-import SectionHead from "@/components/nexora/SectionHead";
+import SectionHead from "@/components/music-exhibition/SectionHead";
 import { GLOSSARY, GLOSSARY_CATS } from "@/lib/musicData";
 
 export default function Insights() {

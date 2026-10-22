@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Loader2, MessageCircle } from "lucide-react";
-import Field from "@/components/nexora/Field";
+import Field from "@/components/music-exhibition/Field";
 import { addGuestbookEntry, getGuestbookEntries } from "@/lib/localData";
 
 export default function Guestbook({ kind = "comment", title, prompt, placeholder, button }) {

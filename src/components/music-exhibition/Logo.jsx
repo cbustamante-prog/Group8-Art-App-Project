@@ -17,7 +17,7 @@ export default function Logo({ size = 34, showText = true }) {
       {showText && (
         <span className="leading-none">
           <span className="block font-display text-base font-semibold tracking-[0.12em] text-slate-100">The Art of Music</span>
-          <span className="poster-label mt-0.5 block text-[0.5rem] text-violet-400">A NEXORA Exhibition</span>
+          <span className="poster-label mt-0.5 block text-[0.5rem] text-violet-400">Interactive Music Exhibition</span>
         </span>
       )}
     </span>

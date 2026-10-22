@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { scrollToId } from "@/lib/nexora";
+import { scrollToId } from "@/lib/siteNavigation";
 
 const DUST = Array.from({ length: 24 }, (_, i) => ({
   left: (i * 41) % 100, top: 30 + ((i * 53) % 70), delay: (i % 9) * 0.7, size: 2 + (i % 3),

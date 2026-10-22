@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
-import SectionHead from "@/components/nexora/SectionHead";
-import Field from "@/components/nexora/Field";
+import SectionHead from "@/components/music-exhibition/SectionHead";
+import Field from "@/components/music-exhibition/Field";
 import { addContactMessage } from "@/lib/localData";
 
 const EMPTY = { name: "", email: "", subject: "", message: "" };
@@ -27,7 +27,7 @@ export default function Contact() {
   return (
     <section id="contact" className="px-5 py-28 sm:px-10">
       <div className="mx-auto max-w-3xl">
-        <SectionHead label="Contact" title="Get in touch.">Questions about the project? Draft a message to the NEXORA team. It will be saved only in this browser and not delivered.</SectionHead>
+        <SectionHead label="Contact" title="Get in touch.">Questions about the project? Draft a message to the project team. It will be saved only in this browser and not delivered.</SectionHead>
         <form onSubmit={submit} noValidate className="glass space-y-5 rounded-3xl p-6 sm:p-8">
           <div className="grid gap-5 sm:grid-cols-2">
             <Field id="c-name" label="Name" value={f.name} onChange={set("name")} error={err.name} maxLength={80} autoComplete="name" multiline={false} />

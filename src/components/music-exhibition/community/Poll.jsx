@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
-import Field from "@/components/nexora/Field";
+import Field from "@/components/music-exhibition/Field";
 import { addPollVote, getPollState } from "@/lib/localData";
 
 const GENRES = ["Classical", "OPM", "Folk", "Jazz", "Rock", "Rap", "Religious", "Blues"];

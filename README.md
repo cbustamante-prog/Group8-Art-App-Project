@@ -1,6 +1,6 @@
-# NEXORA — Beyond the Ordinary
+# The Art of Music
 
-NEXORA is a React and Vite website that can be hosted as a static site. The frontend does not require a Base44 account or backend.
+The Art of Music is a React and Vite website that can be hosted as a static site. The frontend does not require a Base44 account or backend.
 
 ## Run locally
 
