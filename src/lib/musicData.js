@@ -136,13 +136,18 @@ export const REFERENCES = [
   "Art Appreciation Module 8: Music. (n.d.). Course module provided by the instructor.",
   "Psychology Today. (2016, August). What is music, exactly? The Power of Music. https://www.psychologytoday.com/us/blog/the-power-music/201608/what-is-music-exactly/",
   "Norman's Music. (2014). Musical terms glossary: General. https://www.normans.co.uk/blog/2014/04/musical-terms-glossary-general/",
+  "Wikimedia Commons. (2002). Ludwig van Beethoven: Symphony No. 5, I. Allegro con brio [Audio recording by Fulda Symphonic Orchestra, conducted by Simon Schindler]. Public domain. https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_Symphonie_5_c-moll_-_1._Allegro_con_brio.ogg",
+  "Harrison, J. (Violinist), Turizziani, R. (Conductor), & Wichita State University Chamber Players. (2000). Vivaldi: The Four Seasons, Spring, I. Allegro [Audio recording]. CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga",
+  "Pachelbel Canon in D major violin eXquisite version [Audio recording]. (2017). Internet Archive. Public Domain Mark 1.0. https://archive.org/details/PachelbelCanonInDMajorViolineXquisiteVersion",
+  "Dee, A. (2006). Violin sounds and techniques [Audio recording]. CC BY-SA 3.0. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Violin_sounds_and_techniques.ogg",
+  "Metronome 60 BPM [Audio recording]. (2023). Wikimedia Commons. CC0. https://commons.wikimedia.org/wiki/File:Metronome_60bpm.wav",
 ];
 export const IMAGE_CREDITS = [
   "All visuals on this site (logo, vinyl record, cover art, waveforms) are original CSS/SVG creations by The Art of Music team.",
   "Artwork 'covers' in the Showcase are original abstract designs; they are not the official album art of the works named.",
-  "Public-domain gallery recordings use openly licensed clips from Wikimedia Commons and other public-domain sources, with performer and license credit shown in the exhibit dialog.",
-  "Copyrighted tracks in the gallery are embedded via official YouTube/Spotify player embeds, with a fallback link provided for direct access.",
-  "Glossary audio samples are CC0/public-domain demonstration clips, and each sample is credited in the references section.",
+  "The Beethoven and Pachelbel gallery recordings are public domain; the Vivaldi recording is CC BY-SA 4.0. Performer, source, and license details are shown with each player.",
+  "Copyrighted or separately arranged selections use YouTube recordings; their performer and channel are identified with the embed, and rights remain with their owners.",
+  "Glossary samples are limited to matching recordings: a CC0 60 BPM metronome, CC BY-SA 3.0 violin technique examples, and the credited classical recordings listed above.",
   "The Sound Lab synthesizer is original work that produces tones in your browser.",
   "Quotation: Busoni, F., as cited in the Art Appreciation Module 8 introduction.",
 ];

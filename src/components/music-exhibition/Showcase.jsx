@@ -25,7 +25,7 @@ export default function Showcase() {
   return (
     <section id="showcase" className="px-5 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
-        <SectionHead label="Showcase · Art gallery" title="Explore the musical works.">Nine works across genres. Listen to the full recording or open an exhibit to read its meaning and cultural significance.</SectionHead>
+        <SectionHead label="Showcase · Art gallery" title="Explore the musical works.">Nine works across genres. Listen to a recording associated with each work, or open an exhibit to read its meaning and cultural significance.</SectionHead>
         <div className="mb-10 flex flex-wrap gap-2" role="group" aria-label="Filter works by category">
           {WORK_CATEGORIES.map((c) => (
             <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} className={`rounded-full px-5 py-2 text-sm transition ${cat === c ? "bg-violet-500 text-slate-950 shadow-[0_0_24px_rgba(201,162,39,0.55)]" : "glass text-slate-300 hover:bg-white/10"}`}>{c}</button>
@@ -42,7 +42,7 @@ export default function Showcase() {
                   <h3 className="mt-2 font-display text-xl font-semibold">{w.title}</h3>
                   <p className="mt-1 text-sm text-slate-400">{w.creator}</p>
                   <div className="mt-5 flex flex-wrap items-center gap-3">
-                    <AudioPreview {...WORK_MEDIA[w.id]} label={`full recording for ${w.title}`} compact />
+                    <AudioPreview {...WORK_MEDIA[w.id]} label={`recording for ${w.title}`} compact />
                     <button type="button" onClick={() => setSel(w)} className="rounded-full px-3 py-1.5 text-xs text-sky-200 transition hover:bg-white/10">View exhibit</button>
                   </div>
                 </div>
@@ -63,12 +63,12 @@ export default function Showcase() {
               </DialogHeader>
               <p className="text-slate-300">{sel.desc}</p>
               <div>
-                <h4 className="font-display font-semibold text-amber-200">Listen to the full work</h4>
-                <p className="mt-1 text-sm text-slate-400">This is a full recording or official embedded stream for the work shown, with performer and licensing detail below.</p>
-                <div className="mt-3"><AudioPreview {...WORK_MEDIA[sel.id]} label={`full recording for ${sel.title}`} /></div>
+                <h4 className="font-display font-semibold text-amber-200">Listen to this work</h4>
+                <p className="mt-1 text-sm text-slate-400">The recording or selected track is identified below with its performer, source, and licensing details.</p>
+                <div className="mt-3"><AudioPreview {...WORK_MEDIA[sel.id]} label={`recording for ${sel.title}`} /></div>
               </div>
               <div><h4 className="font-display font-semibold text-sky-300">Why it matters</h4><p className="mt-1 text-slate-300">{sel.meaning}</p></div>
-              <p className="text-xs text-slate-500">Performer: {WORK_MEDIA[sel.id].performer}. License: {WORK_MEDIA[sel.id].license}. Credit: work by {sel.creator}. Cover art is an original design, not official artwork.</p>
+              <p className="text-xs text-slate-500">Performer: {WORK_MEDIA[sel.id].performer}. Source and license: {WORK_MEDIA[sel.id].license}. Credit: work by {sel.creator}. Cover art is an original design, not official artwork.</p>
             </div>
           </>)}
         </DialogContent>
