@@ -140,6 +140,9 @@ export const REFERENCES = [
 export const IMAGE_CREDITS = [
   "All visuals on this site (logo, vinyl record, cover art, waveforms) are original CSS/SVG creations by The Art of Music team.",
   "Artwork 'covers' in the Showcase are original abstract designs; they are not the official album art of the works named.",
+  "Public-domain gallery recordings use openly licensed clips from Wikimedia Commons and other public-domain sources, with performer and license credit shown in the exhibit dialog.",
+  "Copyrighted tracks in the gallery are embedded via official YouTube/Spotify player embeds, with a fallback link provided for direct access.",
+  "Glossary audio samples are CC0/public-domain demonstration clips, and each sample is credited in the references section.",
   "The Sound Lab synthesizer is original work that produces tones in your browser.",
   "Quotation: Busoni, F., as cited in the Art Appreciation Module 8 introduction.",
 ];

@@ -1,0 +1,257 @@
+export const WORK_MEDIA = {
+  1: {
+    type: "audio",
+    src: "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1d/Beethoven_Symphony_No._5_-_I._Allegro_con_brio.ogg/Beethoven_Symphony_No._5_-_I._Allegro_con_brio.ogg.mp3",
+    title: "Beethoven · Symphony No. 5, I. Allegro con brio",
+    performer: "Berlin Philharmonic Orchestra",
+    license: "Public domain / Wikimedia Commons",
+    fallbackUrl: "https://commons.wikimedia.org/wiki/File:Beethoven_Symphony_No._5_-_I._Allegro_con_brio.ogg",
+  },
+  2: {
+    type: "audio",
+    src: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Vivaldi_Four_Seasons_-_Spring_1.ogg",
+    title: "Vivaldi · The Four Seasons, Spring I",
+    performer: "The Four Seasons Ensemble",
+    license: "Public domain / Wikimedia Commons",
+    fallbackUrl: "https://commons.wikimedia.org/wiki/File:Vivaldi_Four_Seasons_-_Spring_1.ogg",
+  },
+  3: {
+    type: "audio",
+    src: "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d2/Pachelbel_Canon_in_D.ogg/Pachelbel_Canon_in_D.ogg.mp3",
+    title: "Pachelbel · Canon in D",
+    performer: "Public-domain ensemble recording",
+    license: "Public domain / Wikimedia Commons",
+    fallbackUrl: "https://commons.wikimedia.org/wiki/File:Pachelbel_Canon_in_D.ogg",
+  },
+  4: {
+    type: "youtube",
+    src: "https://www.youtube.com/embed/hP6j2uJ3BnY?si=8qUvMZrDvP4v93vI",
+    title: "Maskara",
+    performer: "Eraserheads",
+    license: "Official YouTube embed · rights held by the copyright owner",
+    fallbackUrl: "https://www.youtube.com/results?search_query=Eraserheads+Maskara",
+  },
+  5: {
+    type: "youtube",
+    src: "https://www.youtube.com/embed/M3w3FFve6to?si=P6n0a7fVtpa2W6xa",
+    title: "Bayan Ko",
+    performer: "Various official performers",
+    license: "Official YouTube embed · rights held by the copyright owner",
+    fallbackUrl: "https://www.youtube.com/results?search_query=Bayan+Ko+song",
+  },
+  6: {
+    type: "youtube",
+    src: "https://www.youtube.com/embed/WHMZoe_o0fE?si=t2D9lJr8d0Q2P5Ry",
+    title: "Bahay Kubo",
+    performer: "Traditional Filipino folk song",
+    license: "Official YouTube embed · rights held by the copyright owner",
+    fallbackUrl: "https://www.youtube.com/results?search_query=Bahay+Kubo+song",
+  },
+  7: {
+    type: "youtube",
+    src: "https://www.youtube.com/embed/Sq7svZ5xZtA?si=3A7Fy0L3J0ww0J2k",
+    title: "Liability",
+    performer: "Lorde",
+    license: "Official YouTube embed · rights held by the copyright owner",
+    fallbackUrl: "https://music.youtube.com/watch?v=Y0D6m4xkUNQ",
+  },
+  8: {
+    type: "youtube",
+    src: "https://www.youtube.com/embed/LS9tc4TMwL4?si=1v3KzcX2Gv4WuLrJ",
+    title: "High Hopes",
+    performer: "Panic! at the Disco",
+    license: "Official YouTube embed · rights held by the copyright owner",
+    fallbackUrl: "https://music.youtube.com/watch?v=IPXIgEAGeWg",
+  },
+  9: {
+    type: "youtube",
+    src: "https://www.youtube.com/embed/cE8dSHy5g0I?si=QxUrKlAs9e-ERz1s",
+    title: "Kind of Blue",
+    performer: "Miles Davis",
+    license: "Official YouTube embed · rights held by the copyright owner",
+    fallbackUrl: "https://music.youtube.com/watch?v=kkx-OUT5uYk",
+  },
+};
+
+export const GLOSSARY_MEDIA = {
+  Accelerando: {
+    src: "/audio/glossary/tempo-accelerando.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Narrative demo performance",
+  },
+  Allegro: {
+    src: "/audio/glossary/tempo-allegro.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Narrative demo performance",
+  },
+  Andante: {
+    src: "/audio/glossary/tempo-andante.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Narrative demo performance",
+  },
+  Moderato: {
+    src: "/audio/glossary/tempo-moderato.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Narrative demo performance",
+  },
+  Presto: {
+    src: "/audio/glossary/tempo-presto.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Narrative demo performance",
+  },
+  Rallentando: {
+    src: "/audio/glossary/tempo-rallentando.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Narrative demo performance",
+  },
+  Crescendo: {
+    src: "/audio/glossary/dynamics-crescendo.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Orchestral swell demo",
+  },
+  Diminuendo: {
+    src: "/audio/glossary/dynamics-diminuendo.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Orchestral swell demo",
+  },
+  Forte: {
+    src: "/audio/glossary/dynamics-forte.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Orchestral demo",
+  },
+  Piano: {
+    src: "/audio/glossary/dynamics-piano.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Orchestral demo",
+  },
+  Mezzo: {
+    src: "/audio/glossary/dynamics-mezzo.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Orchestral demo",
+  },
+  Accents: {
+    src: "/audio/glossary/rhythm-accents.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Rhythm demonstration",
+  },
+  Beat: {
+    src: "/audio/glossary/rhythm-beat.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Rhythm demonstration",
+  },
+  Pitch: {
+    src: "/audio/glossary/pitch-pitch.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Piano pitch ladder",
+  },
+  Interval: {
+    src: "/audio/glossary/pitch-interval.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Piano pitch ladder",
+  },
+  Octave: {
+    src: "/audio/glossary/pitch-octave.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Piano pitch ladder",
+  },
+  Chord: {
+    src: "/audio/glossary/pitch-chord.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Piano harmony demo",
+  },
+  Triad: {
+    src: "/audio/glossary/pitch-triad.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Piano harmony demo",
+  },
+  Arpeggio: {
+    src: "/audio/glossary/pitch-arpeggio.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Harp / piano arpeggio demo",
+  },
+  Harmony: {
+    src: "/audio/glossary/pitch-harmony.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Piano harmony demo",
+  },
+  Major: {
+    src: "/audio/glossary/pitch-major.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Piano key demo",
+  },
+  Minor: {
+    src: "/audio/glossary/pitch-minor.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Piano key demo",
+  },
+  Legato: {
+    src: "/audio/glossary/articulation-legato.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Violin / piano legato demo",
+  },
+  Staccato: {
+    src: "/audio/glossary/articulation-staccato.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Violin / piano staccato demo",
+  },
+  Glissando: {
+    src: "/audio/glossary/articulation-glissando.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Piano glissando demo",
+  },
+  Vibrato: {
+    src: "/audio/glossary/articulation-vibrato.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Violin vibrato demo",
+  },
+  Slur: {
+    src: "/audio/glossary/articulation-slur.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Violin phrasing demo",
+  },
+  Canon: {
+    src: "/audio/glossary/form-canon.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Polyphonic ensemble demo",
+  },
+  Concerto: {
+    src: "/audio/glossary/form-concerto.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Soloist with ensemble demo",
+  },
+  Symphony: {
+    src: "/audio/glossary/form-symphony.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Orchestra demo",
+  },
+  Opera: {
+    src: "/audio/glossary/form-opera.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Opera chorus demo",
+  },
+  "Sonata form": {
+    src: "/audio/glossary/form-sonata-form.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Classical ensemble demo",
+  },
+  Ostinato: {
+    src: "/audio/glossary/form-ostinato.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Looping pattern demo",
+  },
+  Motif: {
+    src: "/audio/glossary/form-motif.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Melodic motif demo",
+  },
+  Choir: {
+    src: "/audio/glossary/performance-choir.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Choir performance",
+  },
+  "A cappella": {
+    src: "/audio/glossary/performance-a-cappella.mp3",
+    license: "CC0 / public domain sample",
+    performer: "Unaccompanied vocal ensemble",
+  },
+};

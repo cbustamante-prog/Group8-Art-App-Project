@@ -2,21 +2,27 @@ import { useMemo, useState } from "react";
 import { Search, SearchX } from "lucide-react";
 import SectionHead from "@/components/music-exhibition/SectionHead";
 import AudioPreview from "@/components/music-exhibition/AudioPreview";
-import { getGlossaryAudio } from "@/lib/audioExamples";
 import { GLOSSARY, GLOSSARY_CATS } from "@/lib/musicData";
+import { GLOSSARY_MEDIA } from "@/lib/mediaLibrary";
+
+const AUDIO_TERMS = new Set(Object.keys(GLOSSARY_MEDIA));
 
 export default function Insights() {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("All");
   const list = useMemo(() => {
     const s = q.trim().toLowerCase();
-    return GLOSSARY.filter((g) => (cat === "All" || g.cat === cat) && (!s || g.term.toLowerCase().includes(s) || g.def.toLowerCase().includes(s)));
+    return GLOSSARY.filter((g) => {
+      const matchesCategory = cat === "All" || g.cat === cat;
+      const matchesQuery = !s || g.term.toLowerCase().includes(s) || g.def.toLowerCase().includes(s);
+      return matchesCategory && matchesQuery;
+    });
   }, [q, cat]);
 
   return (
     <section id="insights" className="px-5 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
-        <SectionHead label="Insights · Musical vocabulary" title="The language of music, searchable.">{GLOSSARY.length} terms from Module 8's review of concepts, sorted by category. Press “Play sample” to hear a short synthesized illustration of each term—not a recording.</SectionHead>
+        <SectionHead label="Insights · Musical vocabulary" title="The language of music, searchable.">{GLOSSARY.length} terms from Module 8's review of concepts, sorted by category. Real performance examples are shown only where the sound directly teaches the concept.</SectionHead>
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
@@ -41,14 +47,29 @@ export default function Insights() {
               </div>
             ) : (
               <div className="grid gap-4 sm:grid-cols-2">
-                {list.map((g) => (
-                  <article key={g.term} className="glass flex flex-col items-start rounded-2xl p-5 transition hover:ring-1 hover:ring-violet-400/40">
-                    <p className="mono-label">{g.cat}</p>
-                    <h3 className="mt-2 font-display text-xl font-semibold">{g.term}</h3>
-                    <p className="mt-1 flex-1 text-sm text-slate-400">{g.def}</p>
-                    <div className="mt-4"><AudioPreview steps={getGlossaryAudio(g.term, g.cat)} label={`audio example for ${g.term}`} compact /></div>
-                  </article>
-                ))}
+                {list.map((g) => {
+                  const media = GLOSSARY_MEDIA[g.term];
+                  const hasAudio = AUDIO_TERMS.has(g.term);
+                  return (
+                    <article key={g.term} className="glass flex flex-col items-start rounded-2xl p-5 transition hover:ring-1 hover:ring-violet-400/40">
+                      <p className="mono-label">{g.cat}</p>
+                      <h3 className="mt-2 font-display text-xl font-semibold">{g.term}</h3>
+                      <p className="mt-1 flex-1 text-sm text-slate-400">{g.def}</p>
+                      {hasAudio && media && (
+                        <div className="mt-4 w-full">
+                          <AudioPreview
+                            src={media.src}
+                            label={`audio example for ${g.term}`}
+                            compact
+                            performer={media.performer}
+                            license={media.license}
+                            title={g.term}
+                          />
+                        </div>
+                      )}
+                    </article>
+                  );
+                })}
               </div>
             )}
           </div>
