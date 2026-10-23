@@ -1,11 +1,8 @@
 import { useMemo, useState } from "react";
 import { Search, SearchX } from "lucide-react";
 import SectionHead from "@/components/music-exhibition/SectionHead";
-import AudioPreview from "@/components/music-exhibition/AudioPreview";
 import { GLOSSARY, GLOSSARY_CATS } from "@/lib/musicData";
-import { GLOSSARY_MEDIA } from "@/lib/mediaLibrary";
-
-const AUDIO_TERMS = new Set(Object.keys(GLOSSARY_MEDIA));
+import { GLOSSARY_VISUALS } from "@/lib/mediaLibrary";
 
 export default function Insights() {
   const [q, setQ] = useState("");
@@ -22,7 +19,7 @@ export default function Insights() {
   return (
     <section id="insights" className="px-5 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
-        <SectionHead label="Insights · Musical vocabulary" title="The language of music, searchable.">{GLOSSARY.length} terms from Module 8's review of concepts, sorted by category. Real performance examples are shown only where the sound directly teaches the concept.</SectionHead>
+        <SectionHead label="Insights · Musical vocabulary" title="The language of music, searchable.">{GLOSSARY.length} music terms explained in plain language, with real photos showing instruments, performers, and notation connected to each idea.</SectionHead>
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
@@ -48,24 +45,22 @@ export default function Insights() {
             ) : (
               <div className="grid gap-4 sm:grid-cols-2">
                 {list.map((g) => {
-                  const media = GLOSSARY_MEDIA[g.term];
-                  const hasAudio = AUDIO_TERMS.has(g.term);
+                  const visual = GLOSSARY_VISUALS[g.term];
                   return (
                     <article key={g.term} className="glass flex flex-col items-start rounded-2xl p-5 transition hover:ring-1 hover:ring-violet-400/40">
                       <p className="mono-label">{g.cat}</p>
                       <h3 className="mt-2 font-display text-xl font-semibold">{g.term}</h3>
                       <p className="mt-1 flex-1 text-sm text-slate-400">{g.def}</p>
-                      {hasAudio && media && (
-                        <div className="mt-4 w-full">
-                          <AudioPreview
-                            src={media.src}
-                            label={`audio example for ${g.term}`}
-                            compact
-                            performer={media.performer}
-                            license={media.license}
-                            title={g.term}
-                          />
-                        </div>
+                      {visual && (
+                        <figure className="mt-4 w-full overflow-hidden rounded-xl border border-white/10">
+                          <img src={visual.src} alt={visual.alt} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                          <figcaption className="space-y-2 p-3 text-xs text-slate-400">
+                            <p>{visual.caption}</p>
+                            <a href={visual.sourceUrl} target="_blank" rel="noreferrer" className="inline-block text-sky-300 underline decoration-sky-300/40 underline-offset-2 hover:text-sky-200">
+                              Photo: {visual.credit} · {visual.license} · Wikimedia Commons
+                            </a>
+                          </figcaption>
+                        </figure>
                       )}
                     </article>
                   );
