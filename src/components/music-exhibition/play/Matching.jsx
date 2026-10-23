@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { RotateCcw } from "lucide-react";
 import { PAIRS } from "@/lib/quizData";
 
