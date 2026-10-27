@@ -1,4 +1,6 @@
-export const WORK_MEDIA = {
+import { WORKS } from "@/lib/musicData";
+
+const EXISTING_WORK_MEDIA = {
       1: {
         kind: "audio",
         src: "/audio/work-beethoven.mp3",
@@ -72,6 +74,33 @@ export const WORK_MEDIA = {
         fallbackUrl: "https://www.youtube.com/watch?v=zqNTltOGh5c",
       },
     };
+
+const VIDEO_WORK_MEDIA = Object.fromEntries(
+  WORKS.filter((work) => work.videoId).map((work) => [
+    work.id,
+    {
+      kind: "youtube",
+      src: `https://www.youtube-nocookie.com/embed/${work.videoId}`,
+      title: work.title,
+      performer: work.creator,
+      license: "YouTube recording · rights remain with the relevant copyright holders",
+      fallbackUrl: null,
+    },
+  ]),
+);
+
+export const WORK_MEDIA = Object.fromEntries(
+  Object.entries({ ...EXISTING_WORK_MEDIA, ...VIDEO_WORK_MEDIA }).map(([id, media]) => [
+    id,
+    media.kind === "youtube"
+      ? {
+          ...media,
+          src: media.src.replace("www.youtube-nocookie.com", "www.youtube.com"),
+          fallbackUrl: null,
+        }
+      : media,
+  ]),
+);
 const pexelsPhoto = (file, alt, caption, page) => ({
   src: `/images/glossary/terms/${file}`,
   alt,

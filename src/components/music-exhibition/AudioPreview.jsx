@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ExternalLink, Pause, Play } from "lucide-react";
+import { Pause, Play } from "lucide-react";
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
@@ -92,6 +92,7 @@ export default function AudioPreview({
             <iframe
               src={src}
               title={title || label}
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -103,9 +104,9 @@ export default function AudioPreview({
           {license && <span>{license}</span>}
           {performer && <span>{performer}</span>}
         </div>
-        {fallbackUrl && (
+        {fallbackUrl && kind !== "youtube" && (
           <a href={fallbackUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-sky-300 hover:text-sky-200">
-            Open on YouTube/Spotify <ExternalLink className="h-4 w-4" />
+            Open source
           </a>
         )}
       </div>

@@ -51,26 +51,148 @@ export const WORKS = [
   { id: 3, title: "Canon in D", creator: "Johann Pachelbel", year: "late 1600s", category: "Classical", from: "#4f4235", to: "#c9a227",
     desc: "A melody followed by imitations of it entering one after another over a repeating bass.",
     meaning: "A clear example of a canon and of ostinato — both defined in the module's review of concepts." },
-  { id: 4, title: "Maskara", creator: "Eraserheads", year: "1994", category: "OPM & Folk", from: "#7b2d26", to: "#c9a227",
+  { id: 4, title: "Maskara", creator: "Eraserheads", year: "1994", category: "Rock", from: "#7b2d26", to: "#c9a227",
     desc: "A reflective alternative-rock song from the album Circus, about the faces people wear.",
     meaning: "One of the module's three pre-test songs: an OPM track that invites you to ask what the creator wanted listeners to feel." },
-  { id: 5, title: "Bayan Ko", creator: "José Corazón de Jesús (lyrics) · Constancio de Guzman (music)", year: "1928", category: "OPM & Folk", from: "#5f4b0f", to: "#a5831c",
+  { id: 5, title: "Bayan Ko", creator: "José Corazón de Jesús (lyrics) · Constancio de Guzman (music)", year: "1928", category: "Folk", from: "#5f4b0f", to: "#a5831c",
     desc: "A Filipino patriotic song about longing for a free homeland.",
     meaning: "A patriotic genre piece: music as a vessel of national identity and resistance." },
-  { id: 6, title: "Bahay Kubo", creator: "Traditional (Filipino folk song)", year: "Traditional", category: "OPM & Folk", from: "#296a63", to: "#c9a227",
+  { id: 6, title: "Bahay Kubo", creator: "Traditional (Filipino folk song)", year: "Traditional", category: "Folk", from: "#296a63", to: "#c9a227",
     desc: "A children's folk song that lists the vegetables growing around a nipa hut.",
     meaning: "Folk music passes down culture orally — simple melody, easy phrases, shared by a community." },
-  { id: 7, title: "Liability", creator: "Lorde", year: "2013", category: "Pop & Rock", from: "#4f4235", to: "#a89274",
+  { id: 7, title: "Liability", creator: "Lorde", year: "2013", category: "Rock", from: "#4f4235", to: "#a89274",
     desc: "A sparse, minimal pop ballad about feeling like too much for others.",
     meaning: "Another module pre-test song. Notice how the quiet style and restrained dynamics shape its vulnerable mood." },
-  { id: 8, title: "High Hopes", creator: "Panic! at the Disco", year: "2018", category: "Pop & Rock", from: "#a5831c", to: "#7b2d26",
+  { id: 8, title: "High Hopes", creator: "Panic! at the Disco", year: "2018", category: "Rock", from: "#a5831c", to: "#7b2d26",
     desc: "An energetic, brass-driven pop-rock anthem about ambition and perseverance.",
     meaning: "The third pre-test song. Compare its fast, driving rhythm with Liability to see how tempo and tone change feeling." },
   { id: 9, title: "Kind of Blue", creator: "Miles Davis", year: "1959", category: "Jazz", from: "#173d39", to: "#35837a",
     desc: "A landmark jazz album built on modal improvisation and a relaxed, cool tone.",
     meaning: "Shows jazz's reliance on improvisation, register and tone — where musicians compose in the moment." },
 ];
-export const WORK_CATEGORIES = ["All", "Classical", "OPM & Folk", "Pop & Rock", "Jazz"];
+
+const ADDITIONAL_WORKS = [
+  {
+    category: "Classical", from: "#8a6c15", to: "#c9a227",
+    tracks: [
+      ["Toccata and Fugue in D minor", "Johann Sebastian Bach", "1700s", "ho9rZjlsyYY", "A dramatic organ work whose contrasting sections showcase counterpoint and dynamics.", "Listen for how a short musical idea is developed through changes in texture and register."],
+      ["Moonlight Sonata", "Ludwig van Beethoven", "1801", "4Tr0otuiQuU", "A piano sonata known for its gentle, flowing first movement.", "The steady broken chords create a calm foundation beneath the expressive melody."],
+      ["Eine kleine Nachtmusik", "Wolfgang Amadeus Mozart", "1787", "Qb_jQBgzU-I", "A lively serenade for strings, with a bright and memorable opening theme.", "Its clear phrases and balanced structure make it a useful example of Classical-era style."],
+      ["Classical Music That Will Make You Look Smart and Creative", "Journey Mx · Epidemic Sound mix", "n.d.", "7gsh5RENwjA", "A classical-style instrumental compilation published by Journey Mx.", "Listen for how melodic lines, orchestration, and dynamics create a classical mood."],
+    ],
+  },
+  {
+    category: "Folk", from: "#5f4b0f", to: "#a5831c",
+    tracks: [
+      ["Scarborough Fair", "Traditional English ballad · Simon & Garfunkel", "1960s", "4Ccgk8PXz64", "A traditional English ballad presented in a well-known folk arrangement.", "Notice the repeating vocal lines and the song's connection to oral storytelling."],
+      ["This Land Is Your Land", "Woody Guthrie", "1940", "wxiMrvDbq3s", "A folk song with a memorable melody and lyrics about the American landscape.", "Its simple, singable structure helped the song travel from performer to performer."],
+      ["House of the Rising Sun", "Traditional American folk song · The Animals", "1964", "4-43lLKaqBQ", "A traditional folk song reimagined in a well-known electric folk-rock arrangement.", "Compare the folk-storytelling roots with the arrangement's amplified instruments and dramatic build."],
+      ["Spring Indie Folk Playlist 2023", "Wildwood Radio · Epidemic Sound", "2023", "ME_9pa0HGHs", "An indie-folk playlist curated by Wildwood Radio featuring Epidemic Sound tracks.", "Listen for acoustic textures and song-based storytelling across the playlist."],
+    ],
+  },
+  {
+    category: "Funk", from: "#7b2d26", to: "#c9a227",
+    tracks: [
+      ["I Feel Good", "James Brown", "1964", "pTdihu-mp90", "A landmark funk performance powered by a punchy horn section and an instantly recognizable groove.", "Listen for the accents, syncopation, and tight call-and-response between the voice and band."],
+      ["Celebration", "Kool & The Gang", "1980", "3GwjfUFyY6M", "A celebratory funk and disco classic driven by a buoyant groove and bright horn lines.", "Notice how the rhythm section and repeated hook invite listeners to move and sing along."],
+      ["Superstition", "Stevie Wonder", "1972", "0CFuCYNx-1g", "A funk song recognized for its syncopated clavinet riff and punchy rhythm.", "Notice how a repeating instrumental motif becomes the center of the arrangement."],
+      ["Happy Funk Music - Instrumental Party Mix", "Epidemic Funk", "n.d.", "55cd7X_LUWk", "An extended instrumental funk mix from the Epidemic Funk channel.", "Follow the bass, drums, and bright accents as the playlist moves between tracks."],
+    ],
+  },
+  {
+    category: "Hip-hop", from: "#4f4235", to: "#a89274",
+    tracks: [
+      ["Lose Yourself", "Eminem", "2002", "xFYQQPAOz7Y", "A rap performance built around a tense repeating guitar figure and determined delivery.", "Follow how rhythm, rhyme, and changes in intensity shape the storytelling."],
+      ["HUMBLE.", "Kendrick Lamar", "2017", "tvTRZJ-4EyI", "A modern hip-hop track with a sparse beat and sharply articulated vocal rhythm.", "Listen to how space in the beat makes the vocal phrasing stand out."],
+      ["California Love", "2Pac · Dr. Dre", "1995", "5wBTdfAkqGU", "A West Coast hip-hop track with a strong groove and an instantly recognizable synth hook.", "The repeating hook and beat give the verses a clear, memorable frame."],
+      ["Best of Epidemic Hip-Hop", "Epidemic Hip-Hop", "n.d.", "5sZwHlbbMtM", "A multi-track hip-hop compilation from the Epidemic Hip-Hop channel.", "Compare how the vocal flows, beats, and production change throughout the mix."],
+    ],
+  },
+  {
+    category: "Jazz", from: "#173d39", to: "#35837a",
+    tracks: [
+      ["Take Five", "The Dave Brubeck Quartet", "1959", "vmDDOFXSgAs", "A jazz standard famous for its distinctive five-beat meter and saxophone melody.", "Count the uneven pulse and listen for the relaxed improvisation over it."],
+      ["What a Wonderful World", "Louis Armstrong", "1967", "VqhCQZaH4Vs", "A warm vocal performance paired with a gentle orchestral arrangement.", "Armstrong's phrasing and tone are central to the character of this recording."],
+      ["Classic Jazz - Epidemic Sound Playlist", "M & H Diary", "n.d.", "_E8rCxn8Lf8", "A classic-jazz playlist featuring Epidemic Sound music, curated by M & H Diary.", "Listen for improvisation, swing, and the interplay between soloists and ensemble."],
+    ],
+  },
+  {
+    category: "Meta Music", from: "#296a63", to: "#7fbcb3",
+    tracks: [
+      ["Thank You for the Music", "ABBA", "1977", "0dcbw4IEY5w", "A song celebrating music, singing, and the joy of performing.", "Use it as a listening prompt: notice how the lyrics make music itself the subject."],
+      ["Don't Stop the Music", "Rihanna", "2007", "yd8jh9QYfEs", "A dance-pop song that celebrates staying on the dance floor and enjoying music.", "Listen for the repeated hook and how production details build the track's energy."],
+      ["Music", "Madonna", "2000", "Sdz2oW0NMFk", "A dance-pop track that puts music and its social power at the center of the lyrics.", "Consider how the beat, repeated phrases, and lyrics reinforce the idea of music bringing people together."],
+      ["Music (1976)", "John Miles · TopPop performance", "1976", "gb6XtyFNawM", "A rock song that places music itself at the center of the lyrics, presented as a TopPop performance.", "Notice how the lyrics turn music into the subject of the song, making it a clear example of Meta Music."],
+    ],
+  },
+  {
+    category: "Opera", from: "#5f4b0f", to: "#c9a227",
+    tracks: [
+      ["Queen of the Night Aria", "Wolfgang Amadeus Mozart · The Royal Opera", "1791", "YuBeBjqKSGQ", "A virtuosic coloratura aria from Mozart's opera The Magic Flute.", "Listen for the singer's high register, agility, and dramatic role in the story."],
+      ["Nessun dorma", "Giacomo Puccini · Luciano Pavarotti", "1926", "cWc7vYjgnTs", "A celebrated tenor aria from Puccini's opera Turandot.", "Notice how the orchestra supports the vocal line as it builds toward a powerful climax."],
+      ["Habanera", "Georges Bizet · Elina Garanca", "1875", "K2snTkaD64U", "The character Carmen introduces herself in this recognizable aria from Bizet's opera.", "The repeating rhythmic pattern helps establish the aria's distinctive character."],
+    ],
+  },
+  {
+    category: "Rock", from: "#7b2d26", to: "#a5831c",
+    tracks: [
+      ["Bohemian Rhapsody", "Queen", "1975", "fJ9rUzIMcZQ", "A rock song that moves through contrasting ballad, opera, and hard-rock sections.", "Hear how shifts in texture, dynamics, and style turn the song into a miniature musical journey."],
+      ["Smells Like Teen Spirit", "Nirvana", "1991", "hTWKbfoikeg", "A grunge-rock song known for its quiet-loud dynamic contrast and driving guitar riff.", "Compare the restrained verses with the explosive choruses."],
+      ["Hey Jude", "The Beatles", "1968", "A_MjCqQoLLA", "A rock ballad that grows from a simple piano-led opening into a communal singalong.", "Notice how repetition and a gradual build shape the song's long closing section."],
+      ["Rock Mix - Epidemic Sound", "Geekos de Tablero", "n.d.", "9vfrRArALi8", "An extended rock playlist built around Epidemic Sound tracks.", "Compare guitar, rhythm, and vocal textures across the selection."],
+    ],
+  },
+  {
+    category: "Techno", from: "#173d39", to: "#7fbcb3",
+    tracks: [
+      ["Around the World", "Daft Punk", "1997", "K0HSD_i2DvA", "A repetitive electronic dance track built from layered synth and vocal patterns.", "Listen to how small changes in the repeating pattern keep the groove moving."],
+      ["One More Time", "Daft Punk", "2000", "FGBhQbmPwH8", "A celebratory electronic dance track with a looping vocal hook and a steady pulse.", "The repeated phrases and gradual layering create a long, continuous dance groove."],
+      ["Blue (Da Ba Dee)", "Eiffel 65", "1998", "zA52uNzx7Y4", "A bright electronic dance track driven by synth hooks and a repeated chorus.", "Notice how the synth timbre and repeated hook make the track instantly recognizable."],
+      ["Epidemic Electronic Music Mix", "Epidemic Electronic", "n.d.", "V1nHExavz_Y", "An extended electronic music mix from the Epidemic Electronic channel.", "Listen for repeated electronic patterns and layered synthesizer textures."],
+    ],
+  },
+  {
+    category: "Trance", from: "#20544f", to: "#7fbcb3",
+    tracks: [
+      ["Sandstorm", "Darude", "1999", "y6120QOlsfU", "An instrumental electronic dance track characterized by a fast tempo and repeating synth patterns.", "Follow how a persistent rhythmic pulse and layered synths build intensity."],
+      ["Children", "Robert Miles", "1995", "CC5ca6Hsb2Q", "A melodic trance instrumental with a piano theme and a steady dance pulse.", "Listen to the contrast between the calm piano motif and the driving electronic backing."],
+      ["9 PM (Till I Come)", "ATB", "1998", "5A9OIIapSko", "A melodic electronic dance track with a repeating guitar-like synth hook.", "Notice how repetition and gradual layering create a hypnotic, forward-moving feel."],
+      ["Top 10 Trance and Techno - Epidemic Sound", "Electronic Atmosphere", "n.d.", "cXOMBk2HlUA", "A trance-and-techno compilation from the Electronic Atmosphere channel.", "Notice how regular pulses and evolving synthesizer layers sustain a dance groove."],
+    ],
+  },
+];
+
+let nextWorkId = 10;
+WORKS.push(
+  ...ADDITIONAL_WORKS.flatMap(({ category, from, to, tracks }) =>
+    tracks.map(([title, creator, year, videoId, desc, meaning]) => ({
+      id: nextWorkId++,
+      title,
+      creator,
+      year,
+      category,
+      from,
+      to,
+      videoId,
+      desc,
+      meaning,
+    })),
+  ),
+);
+
+export const WORK_CATEGORIES = [
+  "All",
+  "Classical",
+  "Folk",
+  "Funk",
+  "Hip-hop",
+  "Jazz",
+  "Meta Music",
+  "Opera",
+  "Rock",
+  "Techno",
+  "Trance",
+];
 
 export const GLOSSARY = [
   ["A cappella", "Singing with voices alone, without instruments playing along. A group can sing harmony a cappella by having different singers hold different notes at the same time.", "Voice"],

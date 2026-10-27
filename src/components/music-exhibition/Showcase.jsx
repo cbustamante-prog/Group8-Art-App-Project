@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Music2 } from "lucide-react";
+import { Music2, Play } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import SectionHead from "@/components/music-exhibition/SectionHead";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -25,12 +25,19 @@ export default function Showcase() {
   return (
     <section id="showcase" className="px-5 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
-        <SectionHead label="Showcase · Art gallery" title="Explore the musical works.">Nine works across genres. Listen to a recording associated with each work, or open an exhibit to read its meaning and cultural significance.</SectionHead>
+        <SectionHead label="Showcase · Art gallery" title="Explore the musical works.">Explore ten music genres inspired by your module, with a growing collection of performances to watch and listen to. Choose a track to open its YouTube player and exhibit notes.</SectionHead>
         <div className="mb-10 flex flex-wrap gap-2" role="group" aria-label="Filter works by category">
           {WORK_CATEGORIES.map((c) => (
-            <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} className={`rounded-full px-5 py-2 text-sm transition ${cat === c ? "bg-violet-500 text-slate-950 shadow-[0_0_24px_rgba(201,162,39,0.55)]" : "glass text-slate-300 hover:bg-white/10"}`}>{c}</button>
+            <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} aria-label={`Filter by ${c}, ${c === "All" ? WORKS.length : WORKS.filter((w) => w.category === c).length} works`} className={`rounded-full px-5 py-2 text-sm transition ${cat === c ? "bg-violet-500 text-slate-950 shadow-[0_0_24px_rgba(201,162,39,0.55)]" : "glass text-slate-300 hover:bg-white/10"}`}>
+              {c}<span className="ml-2 text-xs opacity-70">{c === "All" ? WORKS.length : WORKS.filter((w) => w.category === c).length}</span>
+            </button>
           ))}
         </div>
+        {cat === "Meta Music" && (
+          <p className="mb-6 max-w-3xl text-sm text-slate-400">
+            Your module describes Meta Music as music whose melody is influenced by the structure of songs, also called information music.
+          </p>
+        )}
         <motion.div layout className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {list.map((w) => (
@@ -42,7 +49,9 @@ export default function Showcase() {
                   <h3 className="mt-2 font-display text-xl font-semibold">{w.title}</h3>
                   <p className="mt-1 text-sm text-slate-400">{w.creator}</p>
                   <div className="mt-5 flex flex-wrap items-center gap-3">
-                    <AudioPreview {...WORK_MEDIA[w.id]} label={`recording for ${w.title}`} compact />
+                    <button type="button" onClick={() => setSel(w)} className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1.5 text-xs text-amber-100 transition hover:bg-amber-300/20" aria-label={`Play ${w.title}`}>
+                      <Play className="h-4 w-4" />{WORK_MEDIA[w.id].kind === "youtube" ? "Play here" : "Play sample"}
+                    </button>
                     <button type="button" onClick={() => setSel(w)} className="rounded-full px-3 py-1.5 text-xs text-sky-200 transition hover:bg-white/10">View exhibit</button>
                   </div>
                 </div>
@@ -63,12 +72,14 @@ export default function Showcase() {
               </DialogHeader>
               <p className="text-slate-300">{sel.desc}</p>
               <div>
-                <h4 className="font-display font-semibold text-amber-200">Listen to this work</h4>
-                <p className="mt-1 text-sm text-slate-400">The recording or selected track is identified below with its performer, source, and licensing details.</p>
+                <h4 className="font-display font-semibold text-amber-200">{WORK_MEDIA[sel.id].kind === "youtube" ? "Watch and listen" : "Listen to this work"}</h4>
+                <p className="mt-1 text-sm text-slate-400">
+                  {WORK_MEDIA[sel.id].kind === "youtube" ? "This video opens in the exhibit's embedded player. Some YouTube uploads may not allow embedded playback." : "Play the recording here, or follow its source link below."}
+                </p>
                 <div className="mt-3"><AudioPreview {...WORK_MEDIA[sel.id]} label={`recording for ${sel.title}`} /></div>
               </div>
               <div><h4 className="font-display font-semibold text-sky-300">Why it matters</h4><p className="mt-1 text-slate-300">{sel.meaning}</p></div>
-              <p className="text-xs text-slate-500">Performer: {WORK_MEDIA[sel.id].performer}. Source and license: {WORK_MEDIA[sel.id].license}. Credit: work by {sel.creator}. Cover art is an original design, not official artwork.</p>
+              <p className="text-xs text-slate-500">Creator / channel: {WORK_MEDIA[sel.id].performer}. Source and license: {WORK_MEDIA[sel.id].license}. Credit: work by {sel.creator}. Cover art is an original design, not official artwork.</p>
             </div>
           </>)}
         </DialogContent>
