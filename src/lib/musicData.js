@@ -26,19 +26,84 @@ export const EXPLORE = [
   { id: "genres", icon: "Disc3", tag: "8.5 · Genres", title: "The Different Music Genres",
     summary: "Blues, classical, folk, jazz, military, patriotic, rap, religious, rock and more.",
     points: [
-      "Classical: composed, notated works such as symphonies, concertos and operas.",
-      "Folk and patriotic: songs of a people, passed on and tied to identity — like Filipino folk songs and national anthems.",
-      "Blues, jazz, rock and rap: genres shaped by improvisation, rhythm and personal storytelling.",
-      "Military (marches) and religious music serve ceremony and worship. In the Philippines, Original Pinoy Music (OPM) spans all of these in Filipino languages.",
+      "The module introduces blues, classical, folk, jazz, military, patriotic, rap, religious and rock music.",
+      "Genres can overlap and change over time; artists often combine musical traditions, instruments and rhythms.",
+      "The Showcase gallery has more genre filters and playable listening examples.",
     ] },
   { id: "instruments", icon: "Mic2", tag: "8.6 · Instruments", title: "Classification of Instruments",
-    summary: "Strings, woodwinds, brass, percussion and keyboards — plus the human voice.",
+    summary: "Explore 23 instruments arranged in the alto, bass, baritone, soprano and tenor groups shown in the module.",
     points: [
-      "Strings: sound from vibrating strings — violin, cello, harp, guitar.",
-      "Woodwinds: sound from air across a reed or edge — flute, clarinet, oboe.",
-      "Brass: lip vibration in a metal tube — trumpet, French horn, trombone (whose slide gives 'glissando').",
-      "Percussion and keyboards: struck or pressed — drums, xylophone, piano. Every instrument and voice has a register, its range from low to high.",
+      "The module organizes this selection by vocal range: alto, bass, baritone, soprano and tenor.",
+      "These are register groupings for this lesson, not exclusive instrument families. Some instruments can appear in more than one register or classification system.",
     ] },
+];
+
+export const MODULE_GENRES = [
+  { name: "Blues", description: "Expressive music shaped by recurring chord patterns, blues notes, and stories of struggle, hope, and everyday life." },
+  { name: "Classical", description: "A broad tradition of composed music, from chamber works and concertos to symphonies and opera." },
+  { name: "Folk", description: "Songs and music shared within communities, often passed on through performance and oral tradition." },
+  { name: "Jazz", description: "A musical tradition known for improvisation, syncopation, distinctive rhythms, and interaction between musicians." },
+  { name: "Military", description: "Music for marching, ceremony, and military ensembles, often with a strong, regular pulse." },
+  { name: "Patriotic", description: "Songs that express attachment to a country, shared identity, or a call for freedom and unity." },
+  { name: "Rap", description: "Rhythmic vocal delivery that uses rhyme, flow, and wordplay, commonly performed over a beat." },
+  { name: "Religious", description: "Music connected with worship, prayer, spiritual practice, and faith communities." },
+  { name: "Rock", description: "A broad, evolving genre often built around a strong beat, amplified instruments, and expressive vocals." },
+];
+
+export const INSTRUMENT_GROUPS = [
+  {
+    name: "Alto instruments",
+    range: "Middle register",
+    instruments: [
+      { name: "Alto saxophone", family: "Woodwind · single reed", description: "A mid-sized saxophone with a warm, flexible sound, used in classical ensembles, concert bands, and jazz.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Yamaha_Saxophone_YAS-62.png/500px-Yamaha_Saxophone_YAS-62.png", imageSource: "https://commons.wikimedia.org/wiki/File:Yamaha_Saxophone_YAS-62.png" },
+      { name: "French horn", family: "Brass", description: "A brass instrument with tubing coiled into a circle, rotary valves, and a flared bell. Its tubing measures about 12–13 feet when uncoiled.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Yamaha_Horn_YHR-667V.tif/lossy-page1-500px-Yamaha_Horn_YHR-667V.tif.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Yamaha_Horn_YHR-667V.tif" },
+      { name: "English horn (cor anglais)", family: "Woodwind · double reed", description: "A larger, lower-pitched relative of the oboe with a gently curved bocal and a pear-shaped bell.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/English_Horn_picture.jpg/500px-English_Horn_picture.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:English_Horn_picture.jpg" },
+      { name: "Viola", family: "String · bowed", description: "The middle-voiced member of the violin family, larger and lower in pitch than a violin but higher than a cello.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Bratsche.jpg/500px-Bratsche.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Bratsche.jpg" },
+    ],
+  },
+  {
+    name: "Bass instruments",
+    range: "Low register",
+    instruments: [
+      { name: "Double bass", family: "String · bowed or plucked", description: "The largest and lowest-pitched bowed string instrument in the modern symphony orchestra.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/AGK_bass1_full.jpg/500px-AGK_bass1_full.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:AGK_bass1_full.jpg" },
+      { name: "Bass guitar", family: "String · plucked", description: "A long-necked, fretted instrument that usually has four strings and anchors the low notes in many bands.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Fender_Precision_Bass.jpg/500px-Fender_Precision_Bass.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Fender_Precision_Bass.jpg" },
+      { name: "Bass saxophone", family: "Woodwind · single reed", description: "A very large, low-register member of the saxophone family, usually supported by a strap or stand while played.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/WANZ_Instrument_2024-09_IMG_7848_bass_saxophone_%28edit%29.png/500px-WANZ_Instrument_2024-09_IMG_7848_bass_saxophone_%28edit%29.png", imageSource: "https://commons.wikimedia.org/wiki/File:WANZ_Instrument_2024-09_IMG_7848_bass_saxophone_(edit).png" },
+      { name: "Tuba", family: "Brass", description: "The largest common brass instrument. The player buzzes their lips into a cup-shaped mouthpiece to produce its deep sound.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Yamaha_Bass_tuba_YFB-822.tif/lossy-page1-500px-Yamaha_Bass_tuba_YFB-822.tif.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Yamaha_Bass_tuba_YFB-822.tif" },
+    ],
+  },
+  {
+    name: "Baritone instruments",
+    range: "Middle-low register",
+    instruments: [
+      { name: "Bassoon", family: "Woodwind · double reed", description: "A long, folded wooden instrument with a double reed and a mellow sound, commonly used for bass and tenor parts.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/FoxBassoon.png/500px-FoxBassoon.png", imageSource: "https://commons.wikimedia.org/wiki/File:FoxBassoon.png" },
+      { name: "Baritone saxophone", family: "Woodwind · single reed", description: "A large saxophone with a low, resonant voice; it is the lowest-pitched saxophone in common use.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Baritone_Saxophone_Amati.png/500px-Baritone_Saxophone_Amati.png", imageSource: "https://commons.wikimedia.org/wiki/File:Baritone_Saxophone_Amati.png" },
+      { name: "Bass clarinet", family: "Woodwind · single reed", description: "A low-register clarinet with a curved metal neck and an expanded bell, heard in orchestras and wind ensembles.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/BC_basscl_Prestige_1193_%2B_Yamaha_VCL_622.jpg/500px-BC_basscl_Prestige_1193_%2B_Yamaha_VCL_622.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:BC_basscl_Prestige_1193_%2B_Yamaha_VCL_622.jpg" },
+      { name: "Cello (violoncello)", family: "String · bowed or plucked", description: "A bowed string instrument with a hollow wooden body and four strings; it is played upright with its endpin resting on the floor.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Cello_front_side.png/500px-Cello_front_side.png", imageSource: "https://commons.wikimedia.org/wiki/File:Cello_front_side.png" },
+      { name: "Baritone horn", family: "Brass", description: "A valved brass instrument with a cup-shaped mouthpiece and a mellow middle-low register.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Yamaha_Baritone_horn_YBH-621S_by_Yamaha_%28crop%29.jpg/500px-Yamaha_Baritone_horn_YBH-621S_by_Yamaha_%28crop%29.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Yamaha_Baritone_horn_YBH-621S_by_Yamaha_(crop).jpg" },
+    ],
+  },
+  {
+    name: "Soprano instruments",
+    range: "High register",
+    instruments: [
+      { name: "Flute", family: "Woodwind · blown across an edge", description: "A high-register woodwind that makes sound when air is directed across an opening; keys open and close its tone holes.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Shinobue_and_other_flutes-3.jpg/500px-Shinobue_and_other_flutes-3.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Shinobue_and_other_flutes-3.jpg" },
+      { name: "Violin", family: "String · bowed", description: "A small, high-pitched member of the violin family, usually played with a bow and tuned in perfect fifths.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Violin_VL100.png/500px-Violin_VL100.png", imageSource: "https://commons.wikimedia.org/wiki/File:Violin_VL100.png" },
+      { name: "Soprano saxophone", family: "Woodwind · single reed", description: "A small, high-register saxophone with a bright tone; it may have a straight or curved body.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Yamaha_Saxophone_YSS-875_EX.jpg/500px-Yamaha_Saxophone_YSS-875_EX.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Yamaha_Saxophone_YSS-875_EX.jpg" },
+      { name: "Trumpet", family: "Brass", description: "A high-register brass instrument. The player buzzes their lips into a mouthpiece and uses valves to change notes.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Yamaha_Trumpet_YTR-8335LA_crop.jpg/500px-Yamaha_Trumpet_YTR-8335LA_crop.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Yamaha_Trumpet_YTR-8335LA_crop.jpg" },
+      { name: "Clarinet", family: "Woodwind · single reed", description: "A woodwind with a single-reed mouthpiece, cylindrical body, and flared bell; it has a broad range and a clear, flexible tone.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Leitner%2BKraus_410_320.png/500px-Leitner%2BKraus_410_320.png", imageSource: "https://commons.wikimedia.org/wiki/File:Leitner%2BKraus_410_320.png" },
+      { name: "Oboe", family: "Woodwind · double reed", description: "A slender woodwind whose two reeds vibrate together at the mouthpiece to produce its distinctive sound.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Oboe_Patricola_Artista_PT1.jpg/500px-Oboe_Patricola_Artista_PT1.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Oboe_Patricola_Artista_PT1.jpg" },
+      { name: "Piccolo", family: "Woodwind · blown across an edge", description: "A very small flute that sounds an octave higher than the standard concert flute.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Piccolo.jpg/500px-Piccolo.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Piccolo.jpg" },
+    ],
+  },
+  {
+    name: "Tenor instruments",
+    range: "Middle-high register",
+    instruments: [
+      { name: "Trombone", family: "Brass · slide", description: "A brass instrument whose telescoping slide changes the length of the tubing and allows smooth gliding between pitches.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Yamaha_Tenor_trombone_YSL-891Z_%28re-crop%29.jpg/500px-Yamaha_Tenor_trombone_YSL-891Z_%28re-crop%29.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:Yamaha_Tenor_trombone_YSL-891Z_(re-crop).jpg" },
+      { name: "Tenor saxophone", family: "Woodwind · single reed", description: "A medium-sized saxophone with a rich tone, used in jazz groups, concert bands, and orchestral music.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/TenorSopranoSax_%281%29.jpg/500px-TenorSopranoSax_%281%29.jpg", imageSource: "https://commons.wikimedia.org/wiki/File:TenorSopranoSax_(1).jpg" },
+      { name: "Guitar", family: "String · plucked or strummed", description: "A fretted string instrument, commonly with six strings, played by plucking or strumming.", image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/GuitareClassique5.png/500px-GuitareClassique5.png", imageSource: "https://commons.wikimedia.org/wiki/File:GuitareClassique5.png" },
+    ],
+  },
 ];
 
 export const WORKS = [
