@@ -84,7 +84,7 @@ export default function Explore() {
         </div>
       </div>
       <Dialog open={!!open} onOpenChange={(o) => !o && setOpen(null)}>
-        <DialogContent className="max-h-[85vh] overflow-y-auto border-white/10 bg-slate-950 text-slate-100">
+        <DialogContent className={`${open?.id === "instruments" ? "w-[calc(100vw-2rem)] max-w-7xl max-h-[92vh]" : "max-h-[85vh]"} overflow-y-auto border-white/10 bg-slate-950 text-slate-100`}>
           {open && (<>
             <DialogHeader>
               <p className="mono-label">{open.tag}</p>
