@@ -28,7 +28,7 @@ export default function Creators() {
                   [
                     "Cristian Kyle M. Bustamante",
                     "Crisa Jean C. Calamba",
-                    "Joverix M. Salva",
+                    "Joverix Jr. M. Salva",
                     "Kimberly C. Paguyo",
                     "Loise Phillippe T. Arlalejo",
                   ][i]
