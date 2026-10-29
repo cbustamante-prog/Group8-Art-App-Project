@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Pause, Play } from "lucide-react";
+import { ExternalLink, Pause, Play } from "lucide-react";
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
@@ -109,6 +109,25 @@ export default function AudioPreview({
             Open source
           </a>
         )}
+      </div>
+    );
+  }
+
+  if (kind === "link") {
+    return (
+      <div className="w-full space-y-3">
+        <a
+          href={src}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-2 text-sm text-amber-100 transition hover:bg-amber-300/20"
+        >
+          <ExternalLink className="h-4 w-4" />
+          Search YouTube
+        </a>
+        <p className="text-xs text-slate-400">
+          {performer} · {license}
+        </p>
       </div>
     );
   }

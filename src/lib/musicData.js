@@ -225,12 +225,72 @@ const ADDITIONAL_WORKS = [
       ["Top 10 Trance and Techno - Epidemic Sound", "Electronic Atmosphere", "n.d.", "cXOMBk2HlUA", "A trance-and-techno compilation from the Electronic Atmosphere channel.", "Notice how regular pulses and evolving synthesizer layers sustain a dance groove."],
     ],
   },
+  {
+    category: "Meta Music", from: "#296a63", to: "#7fbcb3",
+    tracks: [
+      ["Awit ng Kabataan", "Rivermaya", "n.d.", "CSX3qhX3iqQ", "An OPM song by Rivermaya included in the submitted Meta Music selection.", "Listen to the melody and arrangement alongside the other OPM selections in this collection."],
+      ["Himig ng Pag-Ibig", "Asin", "n.d.", "prq_XwuGdSQ", "An OPM song by Asin included in the submitted Meta Music selection.", "Listen to the melody and arrangement alongside the other OPM selections in this collection."],
+      ["Your Song", "Parokya ni Edgar", "n.d.", "", "An OPM song by Parokya ni Edgar included in the submitted Meta Music selection.", "Listen to the melody and arrangement alongside the other OPM selections in this collection.", "Your Song Parokya ni Edgar"],
+      ["Kay Ganda ng Ating Musika", "Hajji Alejandro / Ryan Cayabyab", "n.d.", "", "An OPM song associated with Hajji Alejandro and Ryan Cayabyab, included in the submitted Meta Music selection.", "Listen to the melody and arrangement alongside the other OPM selections in this collection.", "Kay Ganda ng Ating Musika Hajji Alejandro Ryan Cayabyab"],
+      ["Salamat", "Yeng Constantino", "n.d.", "", "An OPM song by Yeng Constantino included in the submitted Meta Music selection.", "Listen to the melody and arrangement alongside the other OPM selections in this collection.", "Salamat Yeng Constantino"],
+    ],
+  },
+  {
+    category: "Opera", from: "#5f4b0f", to: "#c9a227",
+    tracks: [
+      ["Awit ng Gabi ni Sisa", "Felipe Padilla de León · Noli Me Tangere", "n.d.", "DbhwWslt0H0", "An opera selection from Felipe Padilla de León's Noli Me Tangere.", "Listen for the expressive vocal writing and how it helps convey the opera's drama."],
+      ["Kay Tamis ng Buhay", "Felipe Padilla de León · Noli Me Tangere", "n.d.", "", "An opera selection from Felipe Padilla de León's Noli Me Tangere.", "Listen for the expressive vocal writing and how it helps convey the opera's drama.", "Kay Tamis ng Buhay Noli Me Tangere Opera"],
+      ["Lupang Pangako", "Felipe Padilla de León · Noli Me Tangere", "n.d.", "YhHaY1iUoZ0", "An opera selection from Felipe Padilla de León's Noli Me Tangere.", "Listen for the expressive vocal writing and how it helps convey the opera's drama."],
+      ["Sampaguita", "Ladislao Bonus · Sangdugong Panaguinip", "n.d.", "", "An opera selection by Ladislao Bonus from Sangdugong Panaguinip.", "Listen for the expressive vocal writing and how it helps convey the opera's drama.", "Sampaguita Sangdugong Panaguinip opera"],
+      ["Magbalik Ka Na Mahal", "Ryan Cayabyab / Kuh Ledesma · Rama Hari", "n.d.", "2hTDTKiBomY", "An opera selection from Ryan Cayabyab's Rama Hari, performed by Kuh Ledesma.", "Listen for the expressive vocal writing and how it helps convey the opera's drama."],
+    ],
+  },
+  {
+    category: "Funk", from: "#7b2d26", to: "#c9a227",
+    tracks: [
+      ["Los Voltaje", "Sayfalse, Yb Wasg'ood & Ariis", "n.d.", "gCESZzZ4Z38", "A funk track by Sayfalse, Yb Wasg'ood, and Ariis.", "Listen for the groove and how the rhythm section shapes the track's energy."],
+      ["Nada Nada", "Jmilton & Mc Jhey", "n.d.", "2LvUweHHCDY", "A funk track by Jmilton and Mc Jhey.", "Listen for the groove and how the rhythm section shapes the track's energy."],
+      ["Funk do Bounce", "Ariis", "n.d.", "kWW-jZ6H_LE", "A funk track by Ariis.", "Listen for the groove and how the rhythm section shapes the track's energy."],
+      ["Foge", "Onhell & KARAN!", "n.d.", "LfUx7_xHh-Y", "A funk track by Onhell and KARAN!.", "Listen for the groove and how the rhythm section shapes the track's energy."],
+      ["Aura", "Ogryzek", "n.d.", "CgXFHAEVJtA", "A funk track by Ogryzek.", "Listen for the groove and how the rhythm section shapes the track's energy."],
+    ],
+  },
+  {
+    category: "Folk", from: "#5f4b0f", to: "#a5831c",
+    tracks: [
+      ["Leaves", "Ben & Ben", "n.d.", "", "A song by Filipino band Ben & Ben, listed in the submitted Folk Music selections.", "Listen for the song-based storytelling and how the arrangement supports the vocal melody.", "Leaves Ben and Ben"],
+    ],
+  },
+  {
+    category: "Rock", from: "#7b2d26", to: "#a5831c",
+    tracks: [
+      ["Let It Be", "The Beatles", "n.d.", "", "A song by The Beatles, listed in the submitted Rock Music selections.", "Listen for how the melody, accompaniment, and vocal delivery shape the song.", "Let It Be The Beatles"],
+    ],
+  },
+  {
+    category: "Jazz", from: "#173d39", to: "#35837a",
+    tracks: [
+      ["You Are the Reason", "Calum Scott", "n.d.", "", "A song by Calum Scott, listed in the submitted Jazz selections.", "Listen for how the vocal melody and accompaniment shape the performance.", "You Are the Reason Calum Scott"],
+    ],
+  },
+  {
+    category: "Hip-hop", from: "#4f4235", to: "#a89274",
+    tracks: [
+      ["Yeah!", "Usher · Lil Jon · Ludacris", "n.d.", "", "A song by Usher featuring Lil Jon and Ludacris, listed in the submitted Hip-hop selections.", "Listen for how the beat and vocal rhythms work together throughout the track.", "Yeah Usher Lil Jon Ludacris"],
+    ],
+  },
+  {
+    category: "Trance", from: "#20544f", to: "#7fbcb3",
+    tracks: [
+      ["Turn It Up", "Armin van Buuren", "n.d.", "", "A track by Armin van Buuren, listed in the submitted Trance selections.", "Listen for the steady pulse and layered electronic sounds that drive the track.", "Turn It Up Armin van Buuren"],
+    ],
+  },
 ];
 
 let nextWorkId = 10;
 WORKS.push(
   ...ADDITIONAL_WORKS.flatMap(({ category, from, to, tracks }) =>
-    tracks.map(([title, creator, year, videoId, desc, meaning]) => ({
+    tracks.map(([title, creator, year, videoId, desc, meaning, searchQuery]) => ({
       id: nextWorkId++,
       title,
       creator,
@@ -238,7 +298,7 @@ WORKS.push(
       category,
       from,
       to,
-      videoId,
+      ...(videoId ? { videoId } : { sourceUrl: `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery || `${title} ${creator}`)}` }),
       desc,
       meaning,
     })),

@@ -54,8 +54,8 @@ export default function Showcase() {
                   <h3 className="mt-2 font-display text-xl font-semibold">{w.title}</h3>
                   <p className="mt-1 text-sm text-slate-400">{w.creator}</p>
                   <div className="mt-5 flex flex-wrap items-center gap-3">
-                    <button type="button" onClick={() => setSel(w)} className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1.5 text-xs text-amber-100 transition hover:bg-amber-300/20" aria-label={`Play ${w.title}`}>
-                      <Play className="h-4 w-4" />{WORK_MEDIA[w.id].kind === "youtube" ? "Play here" : "Play sample"}
+                    <button type="button" onClick={() => setSel(w)} className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1.5 text-xs text-amber-100 transition hover:bg-amber-300/20" aria-label={`${WORK_MEDIA[w.id].kind === "link" ? "Find a recording for" : "Play"} ${w.title}`}>
+                      <Play className="h-4 w-4" />{WORK_MEDIA[w.id].kind === "youtube" ? "Play here" : WORK_MEDIA[w.id].kind === "link" ? "Find on YouTube" : "Play sample"}
                     </button>
                     <button type="button" onClick={() => setSel(w)} className="rounded-full px-3 py-1.5 text-xs text-sky-200 transition hover:bg-white/10">View exhibit</button>
                   </div>
@@ -77,9 +77,9 @@ export default function Showcase() {
               </DialogHeader>
               <p className="text-slate-300">{sel.desc}</p>
               <div>
-                <h4 className="font-display font-semibold text-amber-200">{WORK_MEDIA[sel.id].kind === "youtube" ? "Watch and listen" : "Listen to this work"}</h4>
+                <h4 className="font-display font-semibold text-amber-200">{WORK_MEDIA[sel.id].kind === "youtube" ? "Watch and listen" : WORK_MEDIA[sel.id].kind === "link" ? "Find a recording" : "Listen to this work"}</h4>
                 <p className="mt-1 text-sm text-slate-400">
-                  {WORK_MEDIA[sel.id].kind === "youtube" ? "This video opens in the exhibit's embedded player. Some YouTube uploads may not allow embedded playback." : "Play the recording here, or follow its source link below."}
+                  {WORK_MEDIA[sel.id].kind === "youtube" ? "This video opens in the exhibit's embedded player. Some YouTube uploads may not allow embedded playback." : WORK_MEDIA[sel.id].kind === "link" ? "This selection has no specific video link yet. Search YouTube to choose an available recording." : "Play the recording here, or follow its source link below."}
                 </p>
                 <div className="mt-3"><AudioPreview {...WORK_MEDIA[sel.id]} label={`recording for ${sel.title}`} /></div>
               </div>

@@ -76,14 +76,18 @@ const EXISTING_WORK_MEDIA = {
     };
 
 const VIDEO_WORK_MEDIA = Object.fromEntries(
-  WORKS.filter((work) => work.videoId).map((work) => [
+  WORKS.filter((work) => work.videoId || work.sourceUrl).map((work) => [
     work.id,
     {
-      kind: "youtube",
-      src: `https://www.youtube-nocookie.com/embed/${work.videoId}`,
+      kind: work.videoId ? "youtube" : "link",
+      src: work.videoId
+        ? `https://www.youtube-nocookie.com/embed/${work.videoId}`
+        : work.sourceUrl,
       title: work.title,
       performer: work.creator,
-      license: "YouTube recording · rights remain with the relevant copyright holders",
+      license: work.videoId
+        ? "YouTube recording · rights remain with the relevant copyright holders"
+        : "Search YouTube for an available recording",
       fallbackUrl: null,
     },
   ]),
