@@ -42,7 +42,13 @@ export default function Guestbook({ kind = "comment", title, prompt, placeholder
           {add.isPending && <Loader2 className="h-4 w-4 animate-spin" />}{button}
         </button>
         <div role="status" aria-live="polite">
-          {ok && <p className="text-emerald-400">Submitted for review. Your post will appear here after it is approved.</p>}
+          {ok && (
+            <p className="text-emerald-400">
+              {kind === "comment"
+                ? "Your comment is posted and visible on the Community wall."
+                : "Submitted for review. Your verse will appear here after it is approved."}
+            </p>
+          )}
           {add.isError && <p className="text-red-400">We couldn't submit your post. Please try again.</p>}
         </div>
       </form>

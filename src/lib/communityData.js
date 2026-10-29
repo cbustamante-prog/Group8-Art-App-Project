@@ -18,7 +18,10 @@ export async function getGuestbookEntries(kind) {
 export async function addGuestbookEntry(entry) {
   const { error } = await getSupabaseClient()
     .from("community_posts")
-    .insert({ ...entry, status: "pending" });
+    .insert({
+      ...entry,
+      status: entry.kind === "comment" ? "approved" : "pending",
+    });
 
   if (error) throw error;
 }
