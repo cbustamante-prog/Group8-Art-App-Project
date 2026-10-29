@@ -6,7 +6,6 @@ export const NAV_LINKS = [
   { id: "insights", label: "Insights" },
   { id: "community", label: "Community" },
   { id: "faq", label: "FAQ" },
-  { id: "contact", label: "Contact" },
 ];
 
 export function scrollToId(id) {

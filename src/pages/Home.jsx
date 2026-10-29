@@ -9,7 +9,6 @@ import Insights from "@/components/music-exhibition/Insights";
 import Community from "@/components/music-exhibition/Community";
 import Reflection from "@/components/music-exhibition/Reflection";
 import Faq from "@/components/music-exhibition/Faq";
-import Contact from "@/components/music-exhibition/Contact";
 import Creators from "@/components/music-exhibition/Creators";
 import References from "@/components/music-exhibition/References";
 import Footer from "@/components/music-exhibition/Footer";
@@ -29,7 +28,6 @@ export default function Home() {
         <Community />
         <Reflection />
         <Faq />
-        <Contact />
         <Creators />
         <References />
       </main>
