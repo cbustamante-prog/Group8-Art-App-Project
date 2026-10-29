@@ -7,7 +7,7 @@ export default function Community() {
   return (
     <section id="community" className="px-5 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
-        <SectionHead label="Community" title="Add your voice.">Comment, vote, share a few lines of your own lyrics, and tell us what you think. Your posts and votes are saved only in this browser, not shared with other visitors.</SectionHead>
+        <SectionHead label="Community" title="Add your voice.">Comment, vote, share a few lines of your own lyrics, and tell us what you think. Posts appear after review, poll results are shared, and feedback is sent privately to the project team.</SectionHead>
         <div className="grid gap-6 lg:grid-cols-2">
           <Guestbook kind="comment" title="Community wall" prompt="What does music mean to you? Leave a comment." placeholder="Music reminds me of…" button="Post comment" />
           <Poll />

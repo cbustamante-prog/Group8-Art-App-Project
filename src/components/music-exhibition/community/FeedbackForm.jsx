@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { Loader2, Star } from "lucide-react";
 import Field from "@/components/music-exhibition/Field";
-import { addFeedback } from "@/lib/localData";
+import { addFeedback } from "@/lib/communityData";
 
 export default function FeedbackForm() {
   const [f, setF] = useState({ name: "", message: "" });
@@ -18,12 +18,12 @@ export default function FeedbackForm() {
     if (!rating) er.rating = "Please choose a rating.";
     if (f.message.trim().length < 5) er.message = "Please write at least 5 characters.";
     setErr(er);
-    if (!Object.keys(er).length) send.mutate();
+    if (!er.rating && !er.message) send.mutate();
   };
   return (
     <form onSubmit={submit} noValidate className="glass space-y-4 rounded-3xl p-6 sm:p-8">
       <h3 className="font-display text-2xl font-semibold">Visitor feedback</h3>
-      <p className="text-slate-400">Tell us how this exhibition helped you learn. Feedback is saved only in this browser and is not sent to the team.</p>
+      <p className="text-slate-400">Tell us how this exhibition helped you learn. Your feedback is sent privately to the project team.</p>
       <div role="radiogroup" aria-label="Rating" className="flex gap-1">
         {[1, 2, 3, 4, 5].map((n) => (
           <button type="button" key={n} role="radio" aria-checked={rating === n} aria-label={`${n} star${n > 1 ? "s" : ""}`} onClick={() => setRating(n)}>
@@ -36,8 +36,8 @@ export default function FeedbackForm() {
       <Field id="fb-m" label="Your feedback" multiline maxLength={800} value={f.message} onChange={(e) => setF({ ...f, message: e.target.value })} error={err.message} />
       <button disabled={send.isPending} className="inline-flex items-center gap-2 rounded-full bg-violet-500 px-6 py-3 font-medium text-slate-950 disabled:opacity-60">{send.isPending && <Loader2 className="h-4 w-4 animate-spin" />}Send feedback</button>
       <div role="status" aria-live="polite">
-        {send.isSuccess && <p className="text-emerald-400">Thank you — your feedback was saved in this browser.</p>}
-        {send.isError && <p className="text-red-400">Couldn't save your feedback in this browser. Please try again.</p>}
+        {send.isSuccess && <p className="text-emerald-400">Thank you — your feedback was sent to the project team.</p>}
+        {send.isError && <p className="text-red-400">Couldn't send your feedback. Please try again.</p>}
       </div>
     </form>
   );

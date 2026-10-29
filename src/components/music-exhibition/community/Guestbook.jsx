@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Loader2, MessageCircle } from "lucide-react";
 import Field from "@/components/music-exhibition/Field";
-import { addGuestbookEntry, getGuestbookEntries } from "@/lib/localData";
+import { addGuestbookEntry, getGuestbookEntries } from "@/lib/communityData";
 
 export default function Guestbook({ kind = "comment", title, prompt, placeholder, button }) {
   const qc = useQueryClient();
@@ -27,7 +27,7 @@ export default function Guestbook({ kind = "comment", title, prompt, placeholder
     if (f.name.trim().length < 2) er.name = "Please enter your name (at least 2 characters).";
     if (f.message.trim().length < 5) er.message = "Please write at least 5 characters.";
     setErr(er);
-    if (!Object.keys(er).length) add.mutate({ name: f.name.trim(), message: f.message.trim() });
+    if (!er.name && !er.message) add.mutate({ name: f.name.trim(), message: f.message.trim() });
   };
   const items = data || [];
 
@@ -42,18 +42,18 @@ export default function Guestbook({ kind = "comment", title, prompt, placeholder
           {add.isPending && <Loader2 className="h-4 w-4 animate-spin" />}{button}
         </button>
         <div role="status" aria-live="polite">
-          {ok && <p className="text-emerald-400">Saved in this browser — your post is visible below.</p>}
-          {add.isError && <p className="text-red-400">We couldn't save your post in this browser. Please try again.</p>}
+          {ok && <p className="text-emerald-400">Submitted for review. Your post will appear here after it is approved.</p>}
+          {add.isError && <p className="text-red-400">We couldn't submit your post. Please try again.</p>}
         </div>
       </form>
       <div className="mt-6 space-y-3">
         {isLoading && <p className="flex items-center gap-2 text-slate-400"><Loader2 className="h-4 w-4 animate-spin" />Loading posts…</p>}
-        {isError && <p className="text-red-400">Couldn't load posts.</p>}
+        {isError && <p className="text-red-400">Couldn't load shared posts.</p>}
         {!isLoading && !isError && items.length === 0 && <p className="flex items-center gap-2 text-slate-500"><MessageCircle className="h-4 w-4" />No posts yet — be the first!</p>}
         {items.map((i) => (
           <div key={i.id} className="rounded-2xl bg-white/[0.04] p-4">
             <p className="whitespace-pre-line text-slate-200">{i.message}</p>
-            <p className="mt-2 text-xs text-slate-500">— {i.name} · {new Date(i.created_date).toLocaleDateString()}</p>
+            <p className="mt-2 text-xs text-slate-500">— {i.name} · {new Date(i.created_at).toLocaleDateString()}</p>
           </div>
         ))}
       </div>
