@@ -24,8 +24,24 @@ export default function Creators() {
           {TEAM.map((m, i) => (
             <Reveal key={i} delay={i * 0.06}>
               <Card
-                name={i === 3 ? "Kimberly C. Paguyo" : i === 4 ? "Loise Phillippe T. Arlalejo" : m.name}
-                photo={i === 3 ? "/images/team-member-4.jpg" : i === 4 ? "/images/team-member-5.jpg" : undefined}
+                name={
+                  [
+                    "Cristian Kyle M. Bustamante",
+                    "Crisa Jean C. Calamba",
+                    m.name,
+                    "Kimberly C. Paguyo",
+                    "Loise Phillippe T. Arlalejo",
+                  ][i]
+                }
+                photo={
+                  [
+                    "/images/team-member-1.jpg",
+                    "/images/team-member-2.jpg",
+                    undefined,
+                    "/images/team-member-4.jpg",
+                    "/images/team-member-5.jpg",
+                  ][i]
+                }
               />
             </Reveal>
           ))}
