@@ -22,7 +22,7 @@ export default function Creators() {
         <SectionHead label="Meet the creators" title="The people behind the project.">Group 8 · Music. Names and photos are placeholders until each member's details and permission are confirmed.</SectionHead>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m, i) => <Reveal key={i} delay={i * 0.06}><Card name={m.name} /></Reveal>)}
-          <Reveal delay={0.3}><Card name="Instructor name to be added" role="Art Appreciation Instructor" photo="/images/instructor.jpg" /></Reveal>
+          <Reveal delay={0.3}><Card name="Benedict A. Orejas" role="Art Appreciation Instructor" photo="/images/instructor.jpg" /></Reveal>
         </div>
       </div>
     </section>
