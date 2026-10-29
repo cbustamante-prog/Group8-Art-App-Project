@@ -19,7 +19,7 @@ export default function Creators() {
   return (
     <section id="creators" className="px-5 py-20 sm:px-10">
       <div className="mx-auto max-w-6xl">
-        <SectionHead label="Meet the creators" title="The people behind the project.">Group 8 · Music. Names and photos are placeholders until each member's details and permission are confirmed.</SectionHead>
+        <SectionHead label="Meet the creators" title="The people behind the project." />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((_, i) => (
             <Reveal key={i} delay={i * 0.06}>
