@@ -7,7 +7,7 @@ function Card({ name, role, photo }) {
   return (
     <div className="glass rounded-3xl p-6 text-center">
       <div className="mx-auto flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-violet-600/40 to-sky-500/30 ring-1 ring-white/15">
-        {photo ? <img src={photo} alt={`${role} portrait`} className="h-full w-full object-cover" /> : <User className="h-10 w-10 text-slate-300" aria-label="Photo placeholder" />}
+        {photo ? <img src={photo} alt={`${name} portrait`} className="h-full w-full object-cover" /> : <User className="h-10 w-10 text-slate-300" aria-label="Photo placeholder" />}
       </div>
       <h3 className="mt-4 font-display text-lg font-semibold">{name}</h3>
       <p className="text-sm text-slate-400">{role}</p>
@@ -21,7 +21,14 @@ export default function Creators() {
       <div className="mx-auto max-w-6xl">
         <SectionHead label="Meet the creators" title="The people behind the project.">Group 8 · Music. Names and photos are placeholders until each member's details and permission are confirmed.</SectionHead>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {TEAM.map((m, i) => <Reveal key={i} delay={i * 0.06}><Card name={m.name} /></Reveal>)}
+          {TEAM.map((m, i) => (
+            <Reveal key={i} delay={i * 0.06}>
+              <Card
+                name={i === 3 ? "Kimberly C. Paguyo" : m.name}
+                photo={i === 3 ? "/images/team-member-4.jpg" : undefined}
+              />
+            </Reveal>
+          ))}
           <Reveal delay={0.3}><Card name="Benedict A. Orejas" role="Art Appreciation Instructor" photo="/images/instructor.jpg" /></Reveal>
         </div>
       </div>
