@@ -20,7 +20,7 @@ export default function Insights() {
     <section id="insights" className="px-5 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
         <SectionHead label="Insights · Musical vocabulary" title="The language of music, searchable.">{GLOSSARY.length} music terms explained in plain language, with real photos showing instruments, performers, and notation connected to each idea.</SectionHead>
-        <div className="grid gap-8 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
               <label htmlFor="gsearch" className="sr-only">Search terms</label>
