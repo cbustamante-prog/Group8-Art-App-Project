@@ -24,8 +24,8 @@ export default function Creators() {
           {TEAM.map((m, i) => (
             <Reveal key={i} delay={i * 0.06}>
               <Card
-                name={i === 3 ? "Kimberly C. Paguyo" : m.name}
-                photo={i === 3 ? "/images/team-member-4.jpg" : undefined}
+                name={i === 3 ? "Kimberly C. Paguyo" : i === 4 ? "Loise Phillippe T. Arlalejo" : m.name}
+                photo={i === 3 ? "/images/team-member-4.jpg" : i === 4 ? "/images/team-member-5.jpg" : undefined}
               />
             </Reveal>
           ))}
