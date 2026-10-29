@@ -38,11 +38,16 @@ export default function Showcase() {
             Your module describes Meta Music as music whose melody is influenced by the structure of songs, also called information music.
           </p>
         )}
-        <motion.div layout className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          layout
+          aria-label="Scroll through musical works"
+          tabIndex={0}
+          className="-mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3"
+        >
           <AnimatePresence mode="popLayout">
             {list.map((w) => (
               <motion.article layout key={w.id} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
-                className="glass group flex flex-col justify-start self-start overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:ring-1 hover:ring-sky-400/50">
+                className="glass group flex w-[min(85vw,22rem)] shrink-0 snap-start flex-col justify-start self-start overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:ring-1 hover:ring-sky-400/50 sm:w-auto sm:shrink">
                 <Cover w={w} tall={w.id % 3 === 1} />
                 <div className="p-5">
                   <p className="mono-label">{w.category} · {w.year}</p>
