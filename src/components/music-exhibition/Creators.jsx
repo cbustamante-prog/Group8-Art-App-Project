@@ -21,14 +21,14 @@ export default function Creators() {
       <div className="mx-auto max-w-6xl">
         <SectionHead label="Meet the creators" title="The people behind the project.">Group 8 · Music. Names and photos are placeholders until each member's details and permission are confirmed.</SectionHead>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {TEAM.map((m, i) => (
+          {TEAM.map((_, i) => (
             <Reveal key={i} delay={i * 0.06}>
               <Card
                 name={
                   [
                     "Cristian Kyle M. Bustamante",
                     "Crisa Jean C. Calamba",
-                    m.name,
+                    "Joverix M. Salva",
                     "Kimberly C. Paguyo",
                     "Loise Phillippe T. Arlalejo",
                   ][i]
@@ -37,7 +37,7 @@ export default function Creators() {
                   [
                     "/images/team-member-1.jpg",
                     "/images/team-member-2.jpg",
-                    undefined,
+                    "/images/team-member-3.jpg",
                     "/images/team-member-4.jpg",
                     "/images/team-member-5.jpg",
                   ][i]
