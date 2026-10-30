@@ -317,7 +317,6 @@ WORKS.push(
 );
 
 export const WORK_CATEGORIES = [
-  "All",
   "Classical",
   "Folk",
   "Funk",

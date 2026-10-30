@@ -19,17 +19,17 @@ function Cover({ w }) {
 }
 
 export default function Showcase() {
-  const [cat, setCat] = useState("All");
+  const [cat, setCat] = useState(null);
   const [sel, setSel] = useState(null);
-  const list = WORKS.filter((w) => cat === "All" || w.category === cat);
+  const list = WORKS.filter((w) => !cat || w.category === cat);
   return (
     <section id="showcase" className="px-5 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
         <SectionHead label="Showcase · Art gallery" title="Explore the musical works.">Explore ten music genres, with a growing collection of performances to watch and listen to. Choose a track to open its YouTube player and exhibit notes.</SectionHead>
         <div className="mb-10 flex flex-wrap gap-2" role="group" aria-label="Filter works by category">
           {WORK_CATEGORIES.map((c) => (
-            <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} aria-label={`Filter by ${c}, ${c === "All" ? WORKS.length : WORKS.filter((w) => w.category === c).length} works`} className={`rounded-full px-5 py-2 text-sm transition ${cat === c ? "bg-violet-500 text-slate-950 shadow-[0_0_24px_rgba(201,162,39,0.55)]" : "glass text-slate-300 hover:bg-white/10"}`}>
-              {c}<span className="ml-2 text-xs opacity-70">{c === "All" ? WORKS.length : WORKS.filter((w) => w.category === c).length}</span>
+            <button key={c} onClick={() => setCat(c)} aria-pressed={cat === c} aria-label={`Filter by ${c}, ${WORKS.filter((w) => w.category === c).length} works`} className={`rounded-full px-5 py-2 text-sm transition ${cat === c ? "bg-violet-500 text-slate-950 shadow-[0_0_24px_rgba(201,162,39,0.55)]" : "glass text-slate-300 hover:bg-white/10"}`}>
+              {c}<span className="ml-2 text-xs opacity-70">{WORKS.filter((w) => w.category === c).length}</span>
             </button>
           ))}
         </div>
