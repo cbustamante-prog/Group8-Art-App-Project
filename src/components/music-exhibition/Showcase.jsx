@@ -7,9 +7,9 @@ import AudioPreview from "@/components/music-exhibition/AudioPreview";
 import { WORKS, WORK_CATEGORIES } from "@/lib/musicData";
 import { WORK_MEDIA } from "@/lib/mediaLibrary";
 
-function Cover({ w, tall }) {
+function Cover({ w }) {
   return (
-    <div role="img" aria-label={`Abstract original cover art for ${w.title}`} className={`relative flex items-end overflow-hidden ${tall ? "h-72" : "h-52"}`} style={{ background: `linear-gradient(135deg, ${w.from}, ${w.to})` }}>
+    <div role="img" aria-label={`Abstract original cover art for ${w.title}`} className="relative flex h-52 items-end overflow-hidden" style={{ background: `linear-gradient(135deg, ${w.from}, ${w.to})` }}>
       <Music2 className="absolute right-4 top-4 h-6 w-6 text-white/70" />
       <div className="flex h-full w-full items-end gap-1 px-4 pb-0 opacity-60">
         {Array.from({ length: 22 }, (_, i) => <span key={i} className="flex-1 rounded-t bg-white/40" style={{ height: `${20 + ((i * 37 + w.id * 11) % 60)}%` }} />)}
@@ -42,18 +42,18 @@ export default function Showcase() {
           layout
           aria-label="Scroll through musical works"
           tabIndex={0}
-          className="-mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3"
+          className="-mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:auto-rows-fr sm:grid-cols-2 sm:items-stretch sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3"
         >
           <AnimatePresence mode="popLayout">
             {list.map((w) => (
               <motion.article layout key={w.id} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
-                className="glass group flex w-[min(85vw,22rem)] shrink-0 snap-start flex-col justify-start self-start overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:ring-1 hover:ring-sky-400/50 sm:w-auto sm:shrink">
-                <Cover w={w} tall={w.id % 3 === 1} />
-                <div className="p-5">
+                className="glass group flex w-[min(85vw,22rem)] shrink-0 snap-start flex-col overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:ring-1 hover:ring-sky-400/50 sm:h-full sm:w-auto sm:shrink">
+                <Cover w={w} />
+                <div className="flex flex-1 flex-col p-5">
                   <p className="mono-label">{w.category} · {w.year}</p>
                   <h3 className="mt-2 font-display text-xl font-semibold">{w.title}</h3>
                   <p className="mt-1 text-sm text-slate-400">{w.creator}</p>
-                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                  <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
                     <button type="button" onClick={() => setSel(w)} className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1.5 text-xs text-amber-100 transition hover:bg-amber-300/20" aria-label={`${WORK_MEDIA[w.id].kind === "link" ? "Find a recording for" : "Play"} ${w.title}`}>
                       <Play className="h-4 w-4" />{WORK_MEDIA[w.id].kind === "youtube" ? "Play here" : WORK_MEDIA[w.id].kind === "link" ? "Find on YouTube" : "Play sample"}
                     </button>
