@@ -84,7 +84,7 @@ export default function Explore() {
         </div>
       </div>
       <Dialog open={!!open} onOpenChange={(o) => !o && setOpen(null)}>
-        <DialogContent className={`${open?.id === "instruments" ? "w-[calc(100vw-2rem)] max-w-7xl max-h-[92vh]" : "max-h-[85vh]"} overflow-y-auto border-white/10 bg-slate-950 text-slate-100`}>
+        <DialogContent className={`w-[calc(100vw-2rem)] ${open?.id === "instruments" ? "max-w-7xl max-h-[92vh]" : open?.id === "genres" ? "max-w-5xl max-h-[88vh]" : "max-w-3xl max-h-[88vh]"} overflow-y-auto border-white/10 bg-slate-950 text-slate-100`}>
           {open && (<>
             <DialogHeader>
               <p className="mono-label">{open.tag}</p>
