@@ -380,7 +380,7 @@ export const GLOSSARY = [
 export const GLOSSARY_CATS = ["All", "Tempo", "Dynamics", "Rhythm", "Pitch & Harmony", "Articulation", "Form", "Performance", "Voice"];
 
 export const FAQS = [
-  ["What is The Art of Music?", "The Art of Music is a student-made interactive learning site for Art Appreciation, Group 8, covering Music from Module 8."],
+  ["What is Resonance?", "Resonance is a student-made interactive learning site for Art Appreciation, Group 8, covering Music from Module 8."],
   ["What is music, exactly?", "Fundamentally, music is a combination of sounds, and sound is vibration. Ferruccio Busoni called it \"sonorous air.\""],
   ["Which module lessons does the site cover?", "The origin and role of music (8.1), the elements of music (8.3), essentials of songwriting (8.4), music genres (8.5) and classification of instruments (8.6)."],
   ["How do the interactive activities work?", "Open the Interactive section and choose from the quiz, matching game, guess-the-clue game or the Sound Lab. Objective activities show feedback and correct answers."],
@@ -398,7 +398,7 @@ export const REFERENCES = [
   "Pachelbel Canon in D major violin eXquisite version [Audio recording]. (2017). Internet Archive. Public Domain Mark 1.0. https://archive.org/details/PachelbelCanonInDMajorViolineXquisiteVersion",
 ];
 export const IMAGE_CREDITS = [
-  "All visuals on this site (logo, vinyl record, cover art, waveforms) are original CSS/SVG creations by The Art of Music team.",
+  "All visuals on this site (logo, vinyl record, cover art, waveforms) are original CSS/SVG creations by the Resonance team.",
   "Artwork 'covers' in the Showcase are original abstract designs; they are not the official album art of the works named.",
   "The Beethoven and Pachelbel gallery recordings are public domain; the Vivaldi recording is CC BY-SA 4.0. Performer, source, and license details are shown with each player.",
   "Copyrighted or separately arranged selections use YouTube recordings; their performer and channel are identified with the embed, and rights remain with their owners.",

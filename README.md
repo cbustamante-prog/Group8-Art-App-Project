@@ -1,6 +1,6 @@
-# The Art of Music
+# Resonance
 
-The Art of Music is a React and Vite website hosted as a static site on Vercel. Supabase provides shared storage for Community posts, poll votes, and visitor feedback.
+Resonance is a React and Vite website hosted as a static site on Vercel. Supabase provides shared storage for Community posts, poll votes, and visitor feedback.
 
 ## Run locally
 
