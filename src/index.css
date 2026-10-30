@@ -154,39 +154,44 @@
 }
 
 .background-music-wave path {
-  stroke: rgba(201, 162, 39, 0.16);
-  stroke-width: 1.5;
+  stroke: rgba(201, 162, 39, 0.24);
+  stroke-width: 2;
+  stroke-dasharray: 18 26;
   vector-effect: non-scaling-stroke;
-  animation: background-wave-breathe 12s ease-in-out infinite alternate;
+  animation: background-wave-flow 9s linear infinite, background-wave-breathe 6s ease-in-out infinite alternate;
 }
 
 .background-music-wave path:nth-child(2) {
-  stroke: rgba(111, 190, 180, 0.11);
-  animation-delay: -4s;
+  stroke: rgba(111, 190, 180, 0.2);
+  animation-delay: -3s, -2s;
 }
 
 .background-music-wave path:nth-child(3) {
-  stroke: rgba(201, 162, 39, 0.1);
-  animation-delay: -8s;
+  stroke: rgba(201, 162, 39, 0.16);
+  animation-delay: -6s, -4s;
 }
 
 .background-music-note {
-  color: rgba(229, 198, 116, 0.2);
+  color: rgba(229, 198, 116, 0.34);
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.75rem);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
   line-height: 1;
-  text-shadow: 0 0 24px rgba(201, 162, 39, 0.16);
-  animation: background-note-drift 24s ease-in-out var(--note-delay) infinite;
+  text-shadow: 0 0 28px rgba(201, 162, 39, 0.28);
+  animation: background-note-drift 16s ease-in-out var(--note-delay) infinite;
+}
+
+@keyframes background-wave-flow {
+  to { stroke-dashoffset: -176; }
 }
 
 @keyframes background-wave-breathe {
-  0% { opacity: 0.45; transform: translateX(-8px); }
-  100% { opacity: 1; transform: translateX(8px); }
+  0% { opacity: 0.45; transform: translate3d(-12px, 0, 0) scaleY(0.94); }
+  100% { opacity: 1; transform: translate3d(12px, 0, 0) scaleY(1.06); }
 }
 
 @keyframes background-note-drift {
-  0%, 100% { opacity: 0.35; transform: translate3d(0, 0, 0) rotate(-8deg); }
-  50% { opacity: 0.8; transform: translate3d(8px, -18px, 0) rotate(8deg); }
+  0%, 100% { opacity: 0.4; transform: translate3d(0, 8px, 0) rotate(-12deg); }
+  50% { opacity: 0.9; transform: translate3d(18px, -42px, 0) rotate(14deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
