@@ -52,7 +52,10 @@ export default function Guestbook({ kind = "comment", title, prompt, placeholder
           {add.isError && <p className="text-red-400">We couldn't submit your post. Please try again.</p>}
         </div>
       </form>
-      <div className="mt-6 space-y-3">
+      <div
+        className={`mt-6 space-y-3 ${kind === "comment" ? "max-h-80 overflow-y-auto overscroll-contain pr-2" : ""}`}
+        {...(kind === "comment" ? { role: "region", "aria-label": "Community wall posts", tabIndex: 0 } : {})}
+      >
         {isLoading && <p className="flex items-center gap-2 text-slate-400"><Loader2 className="h-4 w-4 animate-spin" />Loading posts…</p>}
         {isError && <p className="text-red-400">Couldn't load shared posts.</p>}
         {!isLoading && !isError && items.length === 0 && <p className="flex items-center gap-2 text-slate-500"><MessageCircle className="h-4 w-4" />No posts yet — be the first!</p>}
