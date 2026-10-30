@@ -24,7 +24,7 @@ export default function Poll() {
 
   return (
     <div className="glass rounded-3xl p-6 sm:p-8">
-      <h3 className="font-display text-2xl font-semibold">Art Appreciation Poll</h3>
+      <h3 className="font-display text-2xl font-semibold">Music Genre Poll</h3>
       <p className="mt-1 text-slate-400">Which music genre is your favourite?</p>
       {isError && <p className="mt-4 text-red-400">Couldn't load shared poll results.</p>}
       {!voted && !vote.isSuccess ? (
