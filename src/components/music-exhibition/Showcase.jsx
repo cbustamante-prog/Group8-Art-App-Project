@@ -21,7 +21,7 @@ function Cover({ w }) {
 export default function Showcase() {
   const [cat, setCat] = useState(null);
   const [sel, setSel] = useState(null);
-  const list = WORKS.filter((w) => !cat || w.category === cat);
+  const list = cat ? WORKS.filter((w) => w.category === cat) : [];
   return (
     <section id="showcase" className="px-5 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
@@ -33,37 +33,45 @@ export default function Showcase() {
             </button>
           ))}
         </div>
-        {cat === "Meta Music" && (
-          <p className="mb-6 max-w-3xl text-sm text-slate-400">
-            Your module describes Meta Music as music whose melody is influenced by the structure of songs, also called information music.
+        {!cat ? (
+          <p className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-8 text-center text-slate-400">
+            Choose a genre above to explore its musical works.
           </p>
+        ) : (
+          <>
+            {cat === "Meta Music" && (
+              <p className="mb-6 max-w-3xl text-sm text-slate-400">
+                Your module describes Meta Music as music whose melody is influenced by the structure of songs, also called information music.
+              </p>
+            )}
+            <motion.div
+              layout
+              aria-label="Scroll through musical works"
+              tabIndex={0}
+              className="-mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:auto-rows-fr sm:grid-cols-2 sm:items-stretch sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3"
+            >
+              <AnimatePresence mode="popLayout">
+                {list.map((w) => (
+                  <motion.article layout key={w.id} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
+                    className="glass group flex w-[min(85vw,22rem)] shrink-0 snap-start flex-col overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:ring-1 hover:ring-sky-400/50 sm:h-full sm:w-auto sm:shrink">
+                    <Cover w={w} />
+                    <div className="flex flex-1 flex-col p-5">
+                      <p className="mono-label">{w.category} · {w.year}</p>
+                      <h3 className="mt-2 font-display text-xl font-semibold">{w.title}</h3>
+                      <p className="mt-1 text-sm text-slate-400">{w.creator}</p>
+                      <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
+                        <button type="button" onClick={() => setSel(w)} className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1.5 text-xs text-amber-100 transition hover:bg-amber-300/20" aria-label={`${WORK_MEDIA[w.id].kind === "link" ? "Find a recording for" : "Play"} ${w.title}`}>
+                          <Play className="h-4 w-4" />{WORK_MEDIA[w.id].kind === "youtube" ? "Play here" : WORK_MEDIA[w.id].kind === "link" ? "Find on YouTube" : "Play sample"}
+                        </button>
+                        <button type="button" onClick={() => setSel(w)} className="rounded-full px-3 py-1.5 text-xs text-sky-200 transition hover:bg-white/10">View exhibit</button>
+                      </div>
+                    </div>
+                  </motion.article>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          </>
         )}
-        <motion.div
-          layout
-          aria-label="Scroll through musical works"
-          tabIndex={0}
-          className="-mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:auto-rows-fr sm:grid-cols-2 sm:items-stretch sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3"
-        >
-          <AnimatePresence mode="popLayout">
-            {list.map((w) => (
-              <motion.article layout key={w.id} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
-                className="glass group flex w-[min(85vw,22rem)] shrink-0 snap-start flex-col overflow-hidden rounded-3xl transition hover:-translate-y-1 hover:ring-1 hover:ring-sky-400/50 sm:h-full sm:w-auto sm:shrink">
-                <Cover w={w} />
-                <div className="flex flex-1 flex-col p-5">
-                  <p className="mono-label">{w.category} · {w.year}</p>
-                  <h3 className="mt-2 font-display text-xl font-semibold">{w.title}</h3>
-                  <p className="mt-1 text-sm text-slate-400">{w.creator}</p>
-                  <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
-                    <button type="button" onClick={() => setSel(w)} className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1.5 text-xs text-amber-100 transition hover:bg-amber-300/20" aria-label={`${WORK_MEDIA[w.id].kind === "link" ? "Find a recording for" : "Play"} ${w.title}`}>
-                      <Play className="h-4 w-4" />{WORK_MEDIA[w.id].kind === "youtube" ? "Play here" : WORK_MEDIA[w.id].kind === "link" ? "Find on YouTube" : "Play sample"}
-                    </button>
-                    <button type="button" onClick={() => setSel(w)} className="rounded-full px-3 py-1.5 text-xs text-sky-200 transition hover:bg-white/10">View exhibit</button>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </AnimatePresence>
-        </motion.div>
       </div>
       <Dialog open={!!sel} onOpenChange={(o) => !o && setSel(null)}>
         <DialogContent className="max-h-[88vh] overflow-y-auto border-white/10 bg-slate-950 p-0 text-slate-100">
